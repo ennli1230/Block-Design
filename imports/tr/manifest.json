@@ -1,0 +1,2265 @@
+{
+  "status": "imported",
+  "sourceRoot": "html/tr",
+  "pages": [
+    {
+      "source": "tr/acente-ve-belgeler/index.html",
+      "sourceSha256": "888d10e0f8e80ba3204aa1d304386223292825c38eb2d2ba8fcc437ce3f5a34f",
+      "title": "Acente ve belgelerimiz | Scala Nova",
+      "partsDirectory": "pages/acente-ve-belgeler",
+      "fragments": [
+        {
+          "order": 1,
+          "tag": "div",
+          "classes": "container legal-layout",
+          "family": "container legal-layout",
+          "heading": "Acente ve belgelerimiz",
+          "file": "pages/acente-ve-belgeler/01-container-legal-layout.html",
+          "sha256": "5ab6481d2397fb47182da5533df963096729d153d6c6faa858b8f5931021f85a",
+          "repeaterCandidates": [],
+          "behaviors": [
+            "data-legal-extra"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "tr/aktiviteler/balon-turu/index.html",
+      "sourceSha256": "8b0cf849be8ed506c3d966c53881b2b65ab94a32685ebc79b78eb4047bb168c3",
+      "title": "Balon turu | Scala Nova",
+      "partsDirectory": "pages/aktiviteler/balon-turu",
+      "fragments": [
+        {
+          "order": 1,
+          "tag": "section",
+          "classes": "activity-detail-hero",
+          "family": "activity-detail-hero",
+          "heading": "Balon turu",
+          "file": "pages/aktiviteler/balon-turu/01-activity-detail-hero.html",
+          "sha256": "70479f4d28175bad08931376030a5a1f79261a15d2b73193158d64ee61e5976d",
+          "repeaterCandidates": [],
+          "behaviors": []
+        },
+        {
+          "order": 2,
+          "tag": "section",
+          "classes": "section",
+          "family": "section",
+          "heading": "Sabahın ritmine göre planlanan bir deneyim.",
+          "file": "pages/aktiviteler/balon-turu/02-section.html",
+          "sha256": "d8a336c06d4b264fc4070d46f7ced3a688eba95a908aec2fd9dd463ea669803f",
+          "repeaterCandidates": [
+            {
+              "tag": "ul",
+              "class": "",
+              "count": 4
+            }
+          ],
+          "behaviors": []
+        },
+        {
+          "order": 3,
+          "tag": "section",
+          "classes": "section section--paper",
+          "family": "section section--paper",
+          "heading": "Talep nasıl ilerler?",
+          "file": "pages/aktiviteler/balon-turu/03-section-section--paper.html",
+          "sha256": "bd7747c4efcb638e8d68df38fade520d64fd37c1375dc55ad614774067ab016c",
+          "repeaterCandidates": [
+            {
+              "tag": "ol",
+              "class": "",
+              "count": 3
+            }
+          ],
+          "behaviors": []
+        },
+        {
+          "order": 4,
+          "tag": "section",
+          "classes": "section activity-detail-cta",
+          "family": "section activity-detail-cta",
+          "heading": "Bu deneyimi yolculuğunuza ekleyin.",
+          "file": "pages/aktiviteler/balon-turu/04-section-activity-detail-cta.html",
+          "sha256": "7b1c47db316268b0c596ece32c4c2fad130c2b7d5eeb0138916047721c2e22c5",
+          "repeaterCandidates": [],
+          "behaviors": []
+        },
+        {
+          "order": 5,
+          "tag": "section",
+          "classes": "section",
+          "family": "section",
+          "heading": "Başka neler yapılabilir?",
+          "file": "pages/aktiviteler/balon-turu/05-section.html",
+          "sha256": "3b7e2111d3a4c74195ea3fcc6a86c9ded92d08ae7ce4a664432058c3ca9ebf4d",
+          "repeaterCandidates": [],
+          "behaviors": []
+        }
+      ]
+    },
+    {
+      "source": "tr/aktiviteler/index.html",
+      "sourceSha256": "154ecc2be0c7ea2ecda6a087f5f97f24033904d9f2bfb03b2d44a835ebe3ca45",
+      "title": "Kuşadası ve Ege Aktiviteleri | Scala Nova",
+      "partsDirectory": "pages/aktiviteler",
+      "fragments": [
+        {
+          "order": 1,
+          "tag": "section",
+          "classes": "page-hero",
+          "family": "page-hero",
+          "heading": "Kuşadası ve Ege Aktiviteleri",
+          "file": "pages/aktiviteler/01-page-hero.html",
+          "sha256": "286d98e567c4c22c1bb0a5ac35a2b9f7075e328db2473b37c378e21fd5280d37",
+          "repeaterCandidates": [],
+          "behaviors": []
+        },
+        {
+          "order": 2,
+          "tag": "section",
+          "classes": "section",
+          "family": "section",
+          "heading": "Gününüzü farklı bir deneyimle tamamlayın.",
+          "file": "pages/aktiviteler/02-section.html",
+          "sha256": "9e358c82ed8233fab35235b6f42799a9befddafdd6388c12b0753311fe7035a8",
+          "repeaterCandidates": [],
+          "behaviors": []
+        },
+        {
+          "order": 3,
+          "tag": "section",
+          "classes": "section section--paper",
+          "family": "section section--paper",
+          "heading": "Birden fazla deneyimi birleştirmek ister misiniz?",
+          "file": "pages/aktiviteler/03-section-section--paper.html",
+          "sha256": "99b9a77fcb22d8fbf011a3404a101792c7cd7da05321f21e4c77618fd62d3629",
+          "repeaterCandidates": [],
+          "behaviors": []
+        }
+      ]
+    },
+    {
+      "source": "tr/aktiviteler/tekne-gezisi/index.html",
+      "sourceSha256": "414bfddb575947547f99c9c8115a1817f9dc5456008851565c6e2e5627f1ac6c",
+      "title": "Tekne gezisi | Scala Nova",
+      "partsDirectory": "pages/aktiviteler/tekne-gezisi",
+      "fragments": [
+        {
+          "order": 1,
+          "tag": "section",
+          "classes": "activity-detail-hero",
+          "family": "activity-detail-hero",
+          "heading": "Tekne gezisi",
+          "file": "pages/aktiviteler/tekne-gezisi/01-activity-detail-hero.html",
+          "sha256": "68c7e2f3978324a0c210b7e5b0f24c2a868f61b901ae6441b044853a9f04d191",
+          "repeaterCandidates": [],
+          "behaviors": []
+        },
+        {
+          "order": 2,
+          "tag": "section",
+          "classes": "section",
+          "family": "section",
+          "heading": "Denizden başlayan bir Ege günü.",
+          "file": "pages/aktiviteler/tekne-gezisi/02-section.html",
+          "sha256": "e4ef1a08f0ca6acadd2770c6eff7ad6f267dec4c6f952c077aa1e0bf2b7c9421",
+          "repeaterCandidates": [
+            {
+              "tag": "ul",
+              "class": "",
+              "count": 4
+            }
+          ],
+          "behaviors": []
+        },
+        {
+          "order": 3,
+          "tag": "section",
+          "classes": "section section--paper",
+          "family": "section section--paper",
+          "heading": "Talep nasıl ilerler?",
+          "file": "pages/aktiviteler/tekne-gezisi/03-section-section--paper.html",
+          "sha256": "bd7747c4efcb638e8d68df38fade520d64fd37c1375dc55ad614774067ab016c",
+          "repeaterCandidates": [
+            {
+              "tag": "ol",
+              "class": "",
+              "count": 3
+            }
+          ],
+          "behaviors": []
+        },
+        {
+          "order": 4,
+          "tag": "section",
+          "classes": "section activity-detail-cta",
+          "family": "section activity-detail-cta",
+          "heading": "Bu deneyimi yolculuğunuza ekleyin.",
+          "file": "pages/aktiviteler/tekne-gezisi/04-section-activity-detail-cta.html",
+          "sha256": "b859ac6150f49cec4fef6a4e44f0246b0714c900beefd745f83dbbb8c998f60a",
+          "repeaterCandidates": [],
+          "behaviors": []
+        },
+        {
+          "order": 5,
+          "tag": "section",
+          "classes": "section",
+          "family": "section",
+          "heading": "Başka neler yapılabilir?",
+          "file": "pages/aktiviteler/tekne-gezisi/05-section.html",
+          "sha256": "89385b2e42a2a8bcd8b9c933c6f6d12668e105e9abbfd815d5e7d958eef4362c",
+          "repeaterCandidates": [],
+          "behaviors": []
+        }
+      ]
+    },
+    {
+      "source": "tr/aktiviteler/yamac-parasutu/index.html",
+      "sourceSha256": "5fb032f268ce17701c81a38825197279599d9a68258da3c95d04fd3cd5b14e2c",
+      "title": "Yamaç paraşütü | Scala Nova",
+      "partsDirectory": "pages/aktiviteler/yamac-parasutu",
+      "fragments": [
+        {
+          "order": 1,
+          "tag": "section",
+          "classes": "activity-detail-hero",
+          "family": "activity-detail-hero",
+          "heading": "Yamaç paraşütü",
+          "file": "pages/aktiviteler/yamac-parasutu/01-activity-detail-hero.html",
+          "sha256": "ff27dfa7221b2f0c108736726a56656a7ee6ffe517c940f3326ba66bdce9fc6f",
+          "repeaterCandidates": [],
+          "behaviors": []
+        },
+        {
+          "order": 2,
+          "tag": "section",
+          "classes": "section",
+          "family": "section",
+          "heading": "Gökyüzü için doğru günü seçmek.",
+          "file": "pages/aktiviteler/yamac-parasutu/02-section.html",
+          "sha256": "50b4eba7d10e9d67c387176b19ae26f911d5ff96968fe9463a33fd642979bd09",
+          "repeaterCandidates": [
+            {
+              "tag": "ul",
+              "class": "",
+              "count": 4
+            }
+          ],
+          "behaviors": []
+        },
+        {
+          "order": 3,
+          "tag": "section",
+          "classes": "section section--paper",
+          "family": "section section--paper",
+          "heading": "Talep nasıl ilerler?",
+          "file": "pages/aktiviteler/yamac-parasutu/03-section-section--paper.html",
+          "sha256": "bd7747c4efcb638e8d68df38fade520d64fd37c1375dc55ad614774067ab016c",
+          "repeaterCandidates": [
+            {
+              "tag": "ol",
+              "class": "",
+              "count": 3
+            }
+          ],
+          "behaviors": []
+        },
+        {
+          "order": 4,
+          "tag": "section",
+          "classes": "section activity-detail-cta",
+          "family": "section activity-detail-cta",
+          "heading": "Bu deneyimi yolculuğunuza ekleyin.",
+          "file": "pages/aktiviteler/yamac-parasutu/04-section-activity-detail-cta.html",
+          "sha256": "baea86fd5ac2346d270257963e4672ca48b71b369345705583431dbced9fc7e1",
+          "repeaterCandidates": [],
+          "behaviors": []
+        },
+        {
+          "order": 5,
+          "tag": "section",
+          "classes": "section",
+          "family": "section",
+          "heading": "Başka neler yapılabilir?",
+          "file": "pages/aktiviteler/yamac-parasutu/05-section.html",
+          "sha256": "83f947f757ed219858e1fd141e8a74c78baa5ef8110f02358b6f17781eb92e0a",
+          "repeaterCandidates": [],
+          "behaviors": []
+        }
+      ]
+    },
+    {
+      "source": "tr/aktiviteler/yeme-icme-sarap/index.html",
+      "sourceSha256": "b1cf3533ff4b7fae1f54ac6607aec3116a9591445626a12978499e7fd4960f54",
+      "title": "Yeme içme ve şarap | Scala Nova",
+      "partsDirectory": "pages/aktiviteler/yeme-icme-sarap",
+      "fragments": [
+        {
+          "order": 1,
+          "tag": "section",
+          "classes": "activity-detail-hero",
+          "family": "activity-detail-hero",
+          "heading": "Yeme içme ve şarap",
+          "file": "pages/aktiviteler/yeme-icme-sarap/01-activity-detail-hero.html",
+          "sha256": "651c3db67c524ad83edd00723a62ec1ab4a06a3e21ef9acc00234ab2cb4a6778",
+          "repeaterCandidates": [],
+          "behaviors": []
+        },
+        {
+          "order": 2,
+          "tag": "section",
+          "classes": "section",
+          "family": "section",
+          "heading": "Ege’yi sofrada da tanıyın.",
+          "file": "pages/aktiviteler/yeme-icme-sarap/02-section.html",
+          "sha256": "3ff1b4b0dd88e60c789d25a894a341d22f6235fb6fd1cb189fd8c1c374244a6b",
+          "repeaterCandidates": [
+            {
+              "tag": "ul",
+              "class": "",
+              "count": 4
+            }
+          ],
+          "behaviors": []
+        },
+        {
+          "order": 3,
+          "tag": "section",
+          "classes": "section section--paper",
+          "family": "section section--paper",
+          "heading": "Talep nasıl ilerler?",
+          "file": "pages/aktiviteler/yeme-icme-sarap/03-section-section--paper.html",
+          "sha256": "bd7747c4efcb638e8d68df38fade520d64fd37c1375dc55ad614774067ab016c",
+          "repeaterCandidates": [
+            {
+              "tag": "ol",
+              "class": "",
+              "count": 3
+            }
+          ],
+          "behaviors": []
+        },
+        {
+          "order": 4,
+          "tag": "section",
+          "classes": "section activity-detail-cta",
+          "family": "section activity-detail-cta",
+          "heading": "Bu deneyimi yolculuğunuza ekleyin.",
+          "file": "pages/aktiviteler/yeme-icme-sarap/04-section-activity-detail-cta.html",
+          "sha256": "d42bd0ab449aecf91dc66d04e691d1b81b4611e3dd0501f7e9d9ff4dc8376538",
+          "repeaterCandidates": [],
+          "behaviors": []
+        },
+        {
+          "order": 5,
+          "tag": "section",
+          "classes": "section",
+          "family": "section",
+          "heading": "Başka neler yapılabilir?",
+          "file": "pages/aktiviteler/yeme-icme-sarap/05-section.html",
+          "sha256": "541ef842b8aca9696c0aac0b1a1fe5b36e16ee167a2ede53ea45323790330911",
+          "repeaterCandidates": [],
+          "behaviors": []
+        }
+      ]
+    },
+    {
+      "source": "tr/b2b/index.html",
+      "sourceSha256": "71d9198d2e3ce3fa21f2bf9baaffcaced9cbee81be489857c62cf47dc8c94fbb",
+      "title": "Acente İş Ortaklığı | Scala Nova",
+      "partsDirectory": "pages/b2b",
+      "fragments": [
+        {
+          "order": 1,
+          "tag": "section",
+          "classes": "page-hero",
+          "family": "page-hero",
+          "heading": "Acente İş Ortaklığı",
+          "file": "pages/b2b/01-page-hero.html",
+          "sha256": "0648da967c088f12a99014f0ab2b1da5ac8c5fe20a27944c10e52da82724c9e0",
+          "repeaterCandidates": [],
+          "behaviors": []
+        },
+        {
+          "order": 2,
+          "tag": "section",
+          "classes": "section",
+          "family": "section",
+          "heading": "Yerel bilgiyle kurulan iş birlikleri.",
+          "file": "pages/b2b/02-section.html",
+          "sha256": "9f0f218a9026a0b54d1813bd47808f0dbf8a870487c28ceb661c60ded36a0862",
+          "repeaterCandidates": [],
+          "behaviors": []
+        },
+        {
+          "order": 3,
+          "tag": "section",
+          "classes": "section section--paper",
+          "family": "section section--paper",
+          "heading": "Birlikte çalışmayı konuşalım.",
+          "file": "pages/b2b/03-section-section--paper.html",
+          "sha256": "bbb44539a909b04d951244275869952b54871e5e65f51b20711bc11a2166c64e",
+          "repeaterCandidates": [],
+          "behaviors": [
+            "data-demo-form",
+            "data-form-status"
+          ]
+        },
+        {
+          "order": 4,
+          "tag": "section",
+          "classes": "section",
+          "family": "section",
+          "heading": "Referanslar",
+          "file": "pages/b2b/04-section.html",
+          "sha256": "2adedce2537a8c1f6b311362c845329e6fe83c8981cb61e52a12c85a10d4e81b",
+          "repeaterCandidates": [],
+          "behaviors": []
+        }
+      ]
+    },
+    {
+      "source": "tr/cerez-politikasi/index.html",
+      "sourceSha256": "9ea3c827a20923b158c6af8699ceeb15ad68be7dc92381e216cfecb36b7cc896",
+      "title": "Çerez politikası ve tercihleri | Scala Nova",
+      "partsDirectory": "pages/cerez-politikasi",
+      "fragments": [
+        {
+          "order": 1,
+          "tag": "div",
+          "classes": "container legal-layout",
+          "family": "container legal-layout",
+          "heading": "Çerez politikası ve tercihleri",
+          "file": "pages/cerez-politikasi/01-container-legal-layout.html",
+          "sha256": "9922473b4e5898c707c9962bb64d441fe1379730a894b234551a1051159fb2ab",
+          "repeaterCandidates": [],
+          "behaviors": [
+            "data-legal-extra"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "tr/destinasyonlar/didim/index.html",
+      "sourceSha256": "a79adab6cbace226d31a3ea412d9bd2fda189d2222017cf3b0a968b5891b3add",
+      "title": "Didim Gezi Rehberi | Scala Nova",
+      "partsDirectory": "pages/destinasyonlar/didim",
+      "fragments": [
+        {
+          "order": 1,
+          "tag": "section",
+          "classes": "page-hero",
+          "family": "page-hero",
+          "heading": "Didim",
+          "file": "pages/destinasyonlar/didim/01-page-hero.html",
+          "sha256": "6bddcf1725eed6716f22e41033fdb99d62f66c37486a960e7b3b43cb914e0c21",
+          "repeaterCandidates": [],
+          "behaviors": []
+        },
+        {
+          "order": 2,
+          "tag": "section",
+          "classes": "section",
+          "family": "section",
+          "heading": "Didim neden görülmeli?",
+          "file": "pages/destinasyonlar/didim/02-section.html",
+          "sha256": "47e9a1977d69ca389c76fd79381f4125fa3050e9bb0b1d41feb0d817203ccfb3",
+          "repeaterCandidates": [],
+          "behaviors": []
+        },
+        {
+          "order": 3,
+          "tag": "section",
+          "classes": "section seo-overview",
+          "family": "section seo-overview",
+          "heading": "Didim Gezi Rehberi ziyaretini rotanıza bağlayın.",
+          "file": "pages/destinasyonlar/didim/03-section-seo-overview.html",
+          "sha256": "2168d7e1918dbd400077095812a48f26dd0255954b5f13db7cc880934c36b3b3",
+          "repeaterCandidates": [],
+          "behaviors": [
+            "data-sitewide-seo"
+          ]
+        },
+        {
+          "order": 4,
+          "tag": "section",
+          "classes": "section section--paper seo-faq",
+          "family": "section section--paper seo-faq",
+          "heading": "Sık sorulan sorular.",
+          "file": "pages/destinasyonlar/didim/04-section-section--paper-seo-faq.html",
+          "sha256": "3ce708a9e23f21ec169dea9418ae10bc628741c48635e91673e4490f50cf79bc",
+          "repeaterCandidates": [
+            {
+              "tag": "div",
+              "class": "faq-list",
+              "count": 5
+            }
+          ],
+          "behaviors": []
+        }
+      ]
+    },
+    {
+      "source": "tr/destinasyonlar/efes/index.html",
+      "sourceSha256": "a6fe3f57ab0bd560172d197a8c3cde5563dfa3bdd6989cefea38c4ffe8cea5ab",
+      "title": "Efes Gezi Rehberi | Scala Nova",
+      "partsDirectory": "pages/destinasyonlar/efes",
+      "fragments": [
+        {
+          "order": 1,
+          "tag": "section",
+          "classes": "page-hero",
+          "family": "page-hero",
+          "heading": "Efes",
+          "file": "pages/destinasyonlar/efes/01-page-hero.html",
+          "sha256": "4e1eec6fe2501373afa85a264d7e6c6aedb010d5dd72afe7d444cff82534d79d",
+          "repeaterCandidates": [],
+          "behaviors": []
+        },
+        {
+          "order": 2,
+          "tag": "section",
+          "classes": "section",
+          "family": "section",
+          "heading": "Efes neden görülmeli?",
+          "file": "pages/destinasyonlar/efes/02-section.html",
+          "sha256": "e8024431a05beadec48c9fc44644ec06ac998836c7140d17b8efcbf1723923da",
+          "repeaterCandidates": [],
+          "behaviors": []
+        },
+        {
+          "order": 3,
+          "tag": "section",
+          "classes": "section seo-overview",
+          "family": "section seo-overview",
+          "heading": "Efes Gezi Rehberi ziyaretini rotanıza bağlayın.",
+          "file": "pages/destinasyonlar/efes/03-section-seo-overview.html",
+          "sha256": "75c0e464a6eb8ab3cddfe049f1bb3318f860934c70263560400bf4fc49df866c",
+          "repeaterCandidates": [],
+          "behaviors": [
+            "data-sitewide-seo"
+          ]
+        },
+        {
+          "order": 4,
+          "tag": "section",
+          "classes": "section section--paper seo-faq",
+          "family": "section section--paper seo-faq",
+          "heading": "Sık sorulan sorular.",
+          "file": "pages/destinasyonlar/efes/04-section-section--paper-seo-faq.html",
+          "sha256": "1c338f7b257e08070229400af04054b8c849f4b2c7f135fc0bd3d7506e219a11",
+          "repeaterCandidates": [
+            {
+              "tag": "div",
+              "class": "faq-list",
+              "count": 5
+            }
+          ],
+          "behaviors": []
+        }
+      ]
+    },
+    {
+      "source": "tr/destinasyonlar/index.html",
+      "sourceSha256": "e4e02c601bcfc64d9823ac57713711ef3bdd12ff0bd6974fd7d4af00138adecf",
+      "title": "Ege Destinasyonları | Scala Nova",
+      "partsDirectory": "pages/destinasyonlar",
+      "fragments": [
+        {
+          "order": 1,
+          "tag": "section",
+          "classes": "page-hero",
+          "family": "page-hero",
+          "heading": "Ege Destinasyonları",
+          "file": "pages/destinasyonlar/01-page-hero.html",
+          "sha256": "a024621a500b7181a034fa0e62fe033275c0c55425416b622f5dc433e183c968",
+          "repeaterCandidates": [],
+          "behaviors": []
+        },
+        {
+          "order": 2,
+          "tag": "section",
+          "classes": "section",
+          "family": "section",
+          "heading": "Her yer için ayrı hikâye, ayrı URL.",
+          "file": "pages/destinasyonlar/02-section.html",
+          "sha256": "7ba952f1a71e1ef8557a740abeba1e110d650f53e0918ecb687609a69ace30a3",
+          "repeaterCandidates": [],
+          "behaviors": []
+        },
+        {
+          "order": 3,
+          "tag": "section",
+          "classes": "section seo-overview",
+          "family": "section seo-overview",
+          "heading": "Ege Destinasyonları ziyaretini rotanıza bağlayın.",
+          "file": "pages/destinasyonlar/03-section-seo-overview.html",
+          "sha256": "7475dc00dce0c061c7c5c134e7159dccd3df1932877602bd20ad42e6cf9c1e13",
+          "repeaterCandidates": [],
+          "behaviors": [
+            "data-sitewide-seo"
+          ]
+        },
+        {
+          "order": 4,
+          "tag": "section",
+          "classes": "section section--paper seo-faq",
+          "family": "section section--paper seo-faq",
+          "heading": "Sık sorulan sorular.",
+          "file": "pages/destinasyonlar/04-section-section--paper-seo-faq.html",
+          "sha256": "a7aab479ade041d7a846a7f427cc583fc4b06e3f1663a817022b6eea2548d876",
+          "repeaterCandidates": [
+            {
+              "tag": "div",
+              "class": "faq-list",
+              "count": 5
+            }
+          ],
+          "behaviors": []
+        }
+      ]
+    },
+    {
+      "source": "tr/destinasyonlar/kusadasi/index.html",
+      "sourceSha256": "f48eef2a47d82b1c08f17300dcad1c0f82fc26741a10523e6322b29da7b70a1e",
+      "title": "Kuşadası Gezi Rehberi ve Özel Turlar | Scala Nova",
+      "partsDirectory": "pages/destinasyonlar/kusadasi",
+      "fragments": [
+        {
+          "order": 1,
+          "tag": "section",
+          "classes": "page-hero kusadasi-hero",
+          "family": "page-hero kusadasi-hero",
+          "heading": "Kuşadası’nda deniz,tarih ve Ege ritmi.",
+          "file": "pages/destinasyonlar/kusadasi/01-page-hero-kusadasi-hero.html",
+          "sha256": "5409a115806c636548571d1b45894a09d8a693745965f19a8c37ad5e3ca0c6ba",
+          "repeaterCandidates": [],
+          "behaviors": []
+        },
+        {
+          "order": 2,
+          "tag": "div",
+          "classes": "container destination-summary",
+          "family": "container destination-summary",
+          "heading": "",
+          "file": "pages/destinasyonlar/kusadasi/02-container-destination-summary.html",
+          "sha256": "11c91a506e7aea10a7527b745cf5f059e374ddd53ed9fad8a1bad0e01e59291c",
+          "repeaterCandidates": [],
+          "behaviors": []
+        },
+        {
+          "order": 3,
+          "tag": "section",
+          "classes": "section section--paper",
+          "family": "section section--paper",
+          "heading": "Bir kıyı kasabasından fazlası.",
+          "file": "pages/destinasyonlar/kusadasi/03-section-section--paper.html",
+          "sha256": "bf181485efc39f1728977d9948bc56e0ca671c746183ed36fea5a480c15cb06c",
+          "repeaterCandidates": [],
+          "behaviors": []
+        },
+        {
+          "order": 4,
+          "tag": "section",
+          "classes": "section guide-hub",
+          "family": "section guide-hub",
+          "heading": "Kuşadası gezi rehberi: size uygun başlangıcı seçin.",
+          "file": "pages/destinasyonlar/kusadasi/04-section-guide-hub.html",
+          "sha256": "2871b5994e0908a90208e1264fcb0d321e7c2701f14703eb4df3ef5fc8c35d7e",
+          "repeaterCandidates": [],
+          "behaviors": []
+        },
+        {
+          "order": 5,
+          "tag": "section",
+          "classes": "section destination-highlights",
+          "family": "section destination-highlights",
+          "heading": "Kuşadası’nda öne çıkan yerler ve deneyimler.",
+          "file": "pages/destinasyonlar/kusadasi/05-section-destination-highlights.html",
+          "sha256": "d4f52f1e261312414cf88868c359541a3d6f9ecc03c82fbf111c73e315c5faa9",
+          "repeaterCandidates": [],
+          "behaviors": []
+        },
+        {
+          "order": 6,
+          "tag": "section",
+          "classes": "section section--paper",
+          "family": "section section--paper",
+          "heading": "Kuşadası’nda günü nasıl kurmalı?",
+          "file": "pages/destinasyonlar/kusadasi/06-section-section--paper.html",
+          "sha256": "a0a99cafbb25aaaaeba34a6333aad5c344ebad74b08507d8d48036e371d102dd",
+          "repeaterCandidates": [],
+          "behaviors": []
+        },
+        {
+          "order": 7,
+          "tag": "section",
+          "classes": "section visit-rhythm",
+          "family": "section visit-rhythm",
+          "heading": "Mevsime ve sürenize göre Kuşadası.",
+          "file": "pages/destinasyonlar/kusadasi/07-section-visit-rhythm.html",
+          "sha256": "f940264124c4b663551f43b0097475b994889517f3090c4aa476db1e04985ba2",
+          "repeaterCandidates": [],
+          "behaviors": []
+        },
+        {
+          "order": 8,
+          "tag": "section",
+          "classes": "section recommended-journeys",
+          "family": "section recommended-journeys",
+          "heading": "Kuşadası çıkışlı önerilen yolculuklar.",
+          "file": "pages/destinasyonlar/kusadasi/08-section-recommended-journeys.html",
+          "sha256": "e85b99ba67b1b3fb2ae3155a79d08b95db824ba797c59d505dc8b4d5759be157",
+          "repeaterCandidates": [],
+          "behaviors": [
+            "data-journey-carousel",
+            "data-journey-track"
+          ]
+        },
+        {
+          "order": 9,
+          "tag": "section",
+          "classes": "section nearby-destinations",
+          "family": "section nearby-destinations",
+          "heading": "Kuşadası’na yakın destinasyonlar.",
+          "file": "pages/destinasyonlar/kusadasi/09-section-nearby-destinations.html",
+          "sha256": "3a1cfeed9c3706012324fe71b2273bf77833c764bb690ddaf65a4a73c176ce88",
+          "repeaterCandidates": [],
+          "behaviors": []
+        },
+        {
+          "order": 10,
+          "tag": "section",
+          "classes": "section section--paper destination-faq",
+          "family": "section section--paper destination-faq",
+          "heading": "Kuşadası seyahati hakkında.",
+          "file": "pages/destinasyonlar/kusadasi/10-section-section--paper-destination-faq.html",
+          "sha256": "7681e9af8a6614d5f10f079989abd9a7cd840dc553fbb51222b4f3898bb274d2",
+          "repeaterCandidates": [
+            {
+              "tag": "div",
+              "class": "faq-list",
+              "count": 8
+            }
+          ],
+          "behaviors": []
+        },
+        {
+          "order": 11,
+          "tag": "section",
+          "classes": "destination-tailor-cta",
+          "family": "destination-tailor-cta",
+          "heading": "Bir yer seçin.Günün geri kalanını birlikte kuralım.",
+          "file": "pages/destinasyonlar/kusadasi/11-destination-tailor-cta.html",
+          "sha256": "05e3784bc1ddc0a0053808d7cc3c4fe169506744b22887d14ff3c024db57a7d3",
+          "repeaterCandidates": [],
+          "behaviors": []
+        }
+      ]
+    },
+    {
+      "source": "tr/destinasyonlar/milet/index.html",
+      "sourceSha256": "880cd685091e4c8c0b273a8c131f2c1b00453e01680fb84ae988f688c91c2c6b",
+      "title": "Milet Gezi Rehberi | Scala Nova",
+      "partsDirectory": "pages/destinasyonlar/milet",
+      "fragments": [
+        {
+          "order": 1,
+          "tag": "section",
+          "classes": "page-hero",
+          "family": "page-hero",
+          "heading": "Milet",
+          "file": "pages/destinasyonlar/milet/01-page-hero.html",
+          "sha256": "339772248d6b4c3b8b8283db3d4bbd043461a72fab8e38aa2cb3e708dd869b86",
+          "repeaterCandidates": [],
+          "behaviors": []
+        },
+        {
+          "order": 2,
+          "tag": "section",
+          "classes": "section",
+          "family": "section",
+          "heading": "Milet neden görülmeli?",
+          "file": "pages/destinasyonlar/milet/02-section.html",
+          "sha256": "9a77378ec34eeb705da1ade6c3bc6570edeecd620d1c7faf523971acf00f5875",
+          "repeaterCandidates": [],
+          "behaviors": []
+        },
+        {
+          "order": 3,
+          "tag": "section",
+          "classes": "section seo-overview",
+          "family": "section seo-overview",
+          "heading": "Milet Gezi Rehberi ziyaretini rotanıza bağlayın.",
+          "file": "pages/destinasyonlar/milet/03-section-seo-overview.html",
+          "sha256": "8e9b49909610213853747404c2aaa6f779175452829ccdfe4851490da566cb6a",
+          "repeaterCandidates": [],
+          "behaviors": [
+            "data-sitewide-seo"
+          ]
+        },
+        {
+          "order": 4,
+          "tag": "section",
+          "classes": "section section--paper seo-faq",
+          "family": "section section--paper seo-faq",
+          "heading": "Sık sorulan sorular.",
+          "file": "pages/destinasyonlar/milet/04-section-section--paper-seo-faq.html",
+          "sha256": "b0bbd4148634689b7734e0f126b0ea59fdd7119766f3a876263fd11708e2780e",
+          "repeaterCandidates": [
+            {
+              "tag": "div",
+              "class": "faq-list",
+              "count": 5
+            }
+          ],
+          "behaviors": []
+        }
+      ]
+    },
+    {
+      "source": "tr/destinasyonlar/pamukkale/index.html",
+      "sourceSha256": "44a06569ab4c7f9cdf0fa096a36e20ed93f23965015cec887afd7bb94b697432",
+      "title": "Pamukkale Gezi Rehberi | Scala Nova",
+      "partsDirectory": "pages/destinasyonlar/pamukkale",
+      "fragments": [
+        {
+          "order": 1,
+          "tag": "section",
+          "classes": "page-hero",
+          "family": "page-hero",
+          "heading": "Pamukkale",
+          "file": "pages/destinasyonlar/pamukkale/01-page-hero.html",
+          "sha256": "c12197b8182d9e1a407ee4c7bde812499fcbcb4e766aa897ff97d851bda18637",
+          "repeaterCandidates": [],
+          "behaviors": []
+        },
+        {
+          "order": 2,
+          "tag": "section",
+          "classes": "section",
+          "family": "section",
+          "heading": "Pamukkale neden görülmeli?",
+          "file": "pages/destinasyonlar/pamukkale/02-section.html",
+          "sha256": "3259bd3c0d8afc6d06316548b5d99fc5eaa16a077eaed81ebb7bbaccfac1c3d8",
+          "repeaterCandidates": [],
+          "behaviors": []
+        },
+        {
+          "order": 3,
+          "tag": "section",
+          "classes": "section seo-overview",
+          "family": "section seo-overview",
+          "heading": "Pamukkale Gezi Rehberi ziyaretini rotanıza bağlayın.",
+          "file": "pages/destinasyonlar/pamukkale/03-section-seo-overview.html",
+          "sha256": "c809effe2ed06a9af45a3879e93fd8c4111d9c2390e82b543e90491d2f0dfa6c",
+          "repeaterCandidates": [],
+          "behaviors": [
+            "data-sitewide-seo"
+          ]
+        },
+        {
+          "order": 4,
+          "tag": "section",
+          "classes": "section section--paper seo-faq",
+          "family": "section section--paper seo-faq",
+          "heading": "Sık sorulan sorular.",
+          "file": "pages/destinasyonlar/pamukkale/04-section-section--paper-seo-faq.html",
+          "sha256": "ea3c392e004532b5c61bf1ba395d82a808f75fcd017ff9c5fc671150bfc89126",
+          "repeaterCandidates": [
+            {
+              "tag": "div",
+              "class": "faq-list",
+              "count": 5
+            }
+          ],
+          "behaviors": []
+        }
+      ]
+    },
+    {
+      "source": "tr/destinasyonlar/priene/index.html",
+      "sourceSha256": "0996333504769292a7c8856a10781ec551bf58d44a3e32574442e986bda86b77",
+      "title": "Priene Gezi Rehberi | Scala Nova",
+      "partsDirectory": "pages/destinasyonlar/priene",
+      "fragments": [
+        {
+          "order": 1,
+          "tag": "section",
+          "classes": "page-hero",
+          "family": "page-hero",
+          "heading": "Priene",
+          "file": "pages/destinasyonlar/priene/01-page-hero.html",
+          "sha256": "bf446a191ce30d25659c1dd80e04536fdac326638e51c5b9210ec168cc140401",
+          "repeaterCandidates": [],
+          "behaviors": []
+        },
+        {
+          "order": 2,
+          "tag": "section",
+          "classes": "section",
+          "family": "section",
+          "heading": "Priene neden görülmeli?",
+          "file": "pages/destinasyonlar/priene/02-section.html",
+          "sha256": "02aa6d4ab3c810185f8335f7a4fbadd9b8520d417209d95f514bde8c66e1848e",
+          "repeaterCandidates": [],
+          "behaviors": []
+        },
+        {
+          "order": 3,
+          "tag": "section",
+          "classes": "section seo-overview",
+          "family": "section seo-overview",
+          "heading": "Priene Gezi Rehberi ziyaretini rotanıza bağlayın.",
+          "file": "pages/destinasyonlar/priene/03-section-seo-overview.html",
+          "sha256": "5d828842e3430ac7b0759c3d613d6b15efa2167fe1a4b6a318ab160c745ea7ef",
+          "repeaterCandidates": [],
+          "behaviors": [
+            "data-sitewide-seo"
+          ]
+        },
+        {
+          "order": 4,
+          "tag": "section",
+          "classes": "section section--paper seo-faq",
+          "family": "section section--paper seo-faq",
+          "heading": "Sık sorulan sorular.",
+          "file": "pages/destinasyonlar/priene/04-section-section--paper-seo-faq.html",
+          "sha256": "bba18e0636452af40189490024a12d19ff31a3348228769bb7dc580a7470bb57",
+          "repeaterCandidates": [
+            {
+              "tag": "div",
+              "class": "faq-list",
+              "count": 5
+            }
+          ],
+          "behaviors": []
+        }
+      ]
+    },
+    {
+      "source": "tr/destinasyonlar/selcuk/index.html",
+      "sourceSha256": "40b097215c90a33d95454a2f468e58f9012cb854f988a9e1f32fab3b3829e500",
+      "title": "Selçuk Gezi Rehberi | Scala Nova",
+      "partsDirectory": "pages/destinasyonlar/selcuk",
+      "fragments": [
+        {
+          "order": 1,
+          "tag": "section",
+          "classes": "page-hero",
+          "family": "page-hero",
+          "heading": "Selçuk",
+          "file": "pages/destinasyonlar/selcuk/01-page-hero.html",
+          "sha256": "4baaeb49c3f5e32b7c24ce72df8441b0547e205e350a8912bc84b0d75b42c077",
+          "repeaterCandidates": [],
+          "behaviors": []
+        },
+        {
+          "order": 2,
+          "tag": "section",
+          "classes": "section",
+          "family": "section",
+          "heading": "Selçuk neden görülmeli?",
+          "file": "pages/destinasyonlar/selcuk/02-section.html",
+          "sha256": "072c23fe942227c824d698a08222171b354d8d82b746185d32ec678ef2d0015d",
+          "repeaterCandidates": [],
+          "behaviors": []
+        },
+        {
+          "order": 3,
+          "tag": "section",
+          "classes": "section seo-overview",
+          "family": "section seo-overview",
+          "heading": "Selçuk Gezi Rehberi ziyaretini rotanıza bağlayın.",
+          "file": "pages/destinasyonlar/selcuk/03-section-seo-overview.html",
+          "sha256": "c1b619a420a7a1486614f5fdd29de33f29f26d69822411002f16255024fbdc95",
+          "repeaterCandidates": [],
+          "behaviors": [
+            "data-sitewide-seo"
+          ]
+        },
+        {
+          "order": 4,
+          "tag": "section",
+          "classes": "section section--paper seo-faq",
+          "family": "section section--paper seo-faq",
+          "heading": "Sık sorulan sorular.",
+          "file": "pages/destinasyonlar/selcuk/04-section-section--paper-seo-faq.html",
+          "sha256": "84b7f3b581f2b8aa3b6a1773e3be20962b22bed454a6b51c1d661a69894ae3ab",
+          "repeaterCandidates": [
+            {
+              "tag": "div",
+              "class": "faq-list",
+              "count": 5
+            }
+          ],
+          "behaviors": []
+        }
+      ]
+    },
+    {
+      "source": "tr/destinasyonlar/sirince/index.html",
+      "sourceSha256": "9be8f376e2c7f45aace477143058310bc60aa98543c754906a26fdc5fe39fa9f",
+      "title": "Şirince Gezi Rehberi | Scala Nova",
+      "partsDirectory": "pages/destinasyonlar/sirince",
+      "fragments": [
+        {
+          "order": 1,
+          "tag": "section",
+          "classes": "page-hero",
+          "family": "page-hero",
+          "heading": "Şirince",
+          "file": "pages/destinasyonlar/sirince/01-page-hero.html",
+          "sha256": "90cc279a783369581973428671afbb37c9a902801847175022c2a9b400b47784",
+          "repeaterCandidates": [],
+          "behaviors": []
+        },
+        {
+          "order": 2,
+          "tag": "section",
+          "classes": "section",
+          "family": "section",
+          "heading": "Şirince neden görülmeli?",
+          "file": "pages/destinasyonlar/sirince/02-section.html",
+          "sha256": "1b0d8ea3fa76339addfef8b231a6264c1c3a032d3eb19e71926baad6849c1e1a",
+          "repeaterCandidates": [],
+          "behaviors": []
+        },
+        {
+          "order": 3,
+          "tag": "section",
+          "classes": "section seo-overview",
+          "family": "section seo-overview",
+          "heading": "Şirince Gezi Rehberi ziyaretini rotanıza bağlayın.",
+          "file": "pages/destinasyonlar/sirince/03-section-seo-overview.html",
+          "sha256": "292fcbc568ad0cf8b538310cdb16f87a1e0eb13edcbc206807c6d095ec403aa7",
+          "repeaterCandidates": [],
+          "behaviors": [
+            "data-sitewide-seo"
+          ]
+        },
+        {
+          "order": 4,
+          "tag": "section",
+          "classes": "section section--paper seo-faq",
+          "family": "section section--paper seo-faq",
+          "heading": "Sık sorulan sorular.",
+          "file": "pages/destinasyonlar/sirince/04-section-section--paper-seo-faq.html",
+          "sha256": "01ff814eff1376a09646927a8f590a4962f79509b517cae75144c18a2382d3cb",
+          "repeaterCandidates": [
+            {
+              "tag": "div",
+              "class": "faq-list",
+              "count": 5
+            }
+          ],
+          "behaviors": []
+        }
+      ]
+    },
+    {
+      "source": "tr/erisilebilirlik/index.html",
+      "sourceSha256": "83e6455bc2ba9f3a975edb7f0704392b20c7c0ba77dd9d86cb77e70b1bd74fbd",
+      "title": "Erişilebilirlik | Scala Nova",
+      "partsDirectory": "pages/erisilebilirlik",
+      "fragments": [
+        {
+          "order": 1,
+          "tag": "div",
+          "classes": "container legal-layout",
+          "family": "container legal-layout",
+          "heading": "Erişilebilirlik",
+          "file": "pages/erisilebilirlik/01-container-legal-layout.html",
+          "sha256": "8b5d7cf5ff333c119b01863bdc0dc95e8051447277f4d72cf5e6477d8e283ef2",
+          "repeaterCandidates": [],
+          "behaviors": [
+            "data-legal-extra"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "tr/hakkimizda/index.html",
+      "sourceSha256": "7689924c764bd8c54f61452baf146210211f864716ab35fba79ad90d61c5ba73",
+      "title": "Scala Nova Hakkında | Scala Nova",
+      "partsDirectory": "pages/hakkimizda",
+      "fragments": [
+        {
+          "order": 1,
+          "tag": "section",
+          "classes": "page-hero",
+          "family": "page-hero",
+          "heading": "Scala Nova Hakkında",
+          "file": "pages/hakkimizda/01-page-hero.html",
+          "sha256": "053ec498f1f15fad177b8cf081bd78581b6613d52b5e9fe4b87f809a931205e3",
+          "repeaterCandidates": [],
+          "behaviors": []
+        },
+        {
+          "order": 2,
+          "tag": "section",
+          "classes": "section",
+          "family": "section",
+          "heading": "Kuşadası'na bağlı, kişisel seyahat için tasarlandı.",
+          "file": "pages/hakkimizda/02-section.html",
+          "sha256": "a9bc1fd96653cfc63ad0a2246aa28ce36feaf941a87f784f7f38262274c3c4ab",
+          "repeaterCandidates": [],
+          "behaviors": []
+        },
+        {
+          "order": 3,
+          "tag": "section",
+          "classes": "section seo-overview",
+          "family": "section seo-overview",
+          "heading": "Scala Nova Hakkında hakkında pratik bilgiler.",
+          "file": "pages/hakkimizda/03-section-seo-overview.html",
+          "sha256": "057dd21a794253498218e0107b8034cdbe584651aaf6f4db3d62df3f0696822d",
+          "repeaterCandidates": [],
+          "behaviors": [
+            "data-sitewide-seo"
+          ]
+        },
+        {
+          "order": 4,
+          "tag": "section",
+          "classes": "section section--paper seo-faq",
+          "family": "section section--paper seo-faq",
+          "heading": "Sık sorulan sorular.",
+          "file": "pages/hakkimizda/04-section-section--paper-seo-faq.html",
+          "sha256": "0c78ff4e5e25ba9c8b15c4ba3a53945cb03017ad770ed73d37af4beae7323267",
+          "repeaterCandidates": [
+            {
+              "tag": "div",
+              "class": "faq-list",
+              "count": 5
+            }
+          ],
+          "behaviors": []
+        }
+      ]
+    },
+    {
+      "source": "tr/iletisim/index.html",
+      "sourceSha256": "11043ddf61a35186507a9e685675ffd88266cde764e364dbbc6027a217a783cb",
+      "title": "Scala Nova İletişim | Scala Nova",
+      "partsDirectory": "pages/iletisim",
+      "fragments": [
+        {
+          "order": 1,
+          "tag": "section",
+          "classes": "page-hero",
+          "family": "page-hero",
+          "heading": "Scala Nova İletişim",
+          "file": "pages/iletisim/01-page-hero.html",
+          "sha256": "cbed23b566db75580756ef2408d329bb24ffdc53a3d13af81f47224cac451aa4",
+          "repeaterCandidates": [],
+          "behaviors": []
+        },
+        {
+          "order": 2,
+          "tag": "section",
+          "classes": "section",
+          "family": "section",
+          "heading": "Planlarınızın nerede başladığını anlatın.",
+          "file": "pages/iletisim/02-section.html",
+          "sha256": "59443b3469438949c04d0d7301a2eae0e622bd5464eba893d2675e3f1d3fdd44",
+          "repeaterCandidates": [],
+          "behaviors": [
+            "data-demo-form",
+            "data-form-status",
+            "data-privacy-link"
+          ]
+        },
+        {
+          "order": 3,
+          "tag": "section",
+          "classes": "section seo-overview",
+          "family": "section seo-overview",
+          "heading": "Scala Nova İletişim hakkında pratik bilgiler.",
+          "file": "pages/iletisim/03-section-seo-overview.html",
+          "sha256": "cf5a92e142ce1e2a90ec216a5aa7394b256576c52beae8283129b27fba9e1f4d",
+          "repeaterCandidates": [],
+          "behaviors": [
+            "data-sitewide-seo"
+          ]
+        },
+        {
+          "order": 4,
+          "tag": "section",
+          "classes": "section section--paper seo-faq",
+          "family": "section section--paper seo-faq",
+          "heading": "Sık sorulan sorular.",
+          "file": "pages/iletisim/04-section-section--paper-seo-faq.html",
+          "sha256": "1a5b661b9a052058366d54fc4d8546d8f09fe63c641872811b6718db090bb7ea",
+          "repeaterCandidates": [
+            {
+              "tag": "div",
+              "class": "faq-list",
+              "count": 5
+            }
+          ],
+          "behaviors": []
+        }
+      ]
+    },
+    {
+      "source": "tr/index.html",
+      "sourceSha256": "e04a6cb511094aa8731fbef3e088afceb5a03fd26c90b4486a6e52abcb3ce239",
+      "title": "Scala Nova | Kuşadası Özel Turlar ve Seyahatler",
+      "partsDirectory": "pages",
+      "fragments": [
+        {
+          "order": 1,
+          "tag": "section",
+          "classes": "hero hero-slider",
+          "family": "hero hero-slider",
+          "heading": "Olağanüstü yolculuklar Ege'de başlar.",
+          "file": "pages/01-hero-hero-slider.html",
+          "sha256": "37bfdaa52e91e1f0611c6cfea6d0e0072dddbe5e09f98466d2a9d255905e846d",
+          "repeaterCandidates": [],
+          "behaviors": [
+            "data-hero-dot",
+            "data-hero-next",
+            "data-hero-prev",
+            "data-hero-slide",
+            "data-hero-slider",
+            "data-hero-status"
+          ]
+        },
+        {
+          "order": 2,
+          "tag": "section",
+          "classes": "finder",
+          "family": "finder",
+          "heading": "",
+          "file": "pages/02-finder.html",
+          "sha256": "3b47b2f9a5d63195c43659cd1aa188d4c332509bbe24f3392358c47a3b428045",
+          "repeaterCandidates": [],
+          "behaviors": [
+            "data-finder-message",
+            "data-privacy-link",
+            "data-tour-search"
+          ]
+        },
+        {
+          "order": 3,
+          "tag": "section",
+          "classes": "section",
+          "family": "section",
+          "heading": "Hikâyesi taşlarda yaşayan yerler.",
+          "file": "pages/03-section.html",
+          "sha256": "7b34c8c72b3ed6f7387f09457feed634f79eff541b59f8b2fcbc0aeebeea1203",
+          "repeaterCandidates": [],
+          "behaviors": []
+        },
+        {
+          "order": 4,
+          "tag": "section",
+          "classes": "journey-strip",
+          "family": "journey-strip",
+          "heading": "Yolculuğun, senin planın.",
+          "file": "pages/04-journey-strip.html",
+          "sha256": "ca383928932fb17b9d4cf48b2fc5cca9e0466f75825bc5b7c07969c4281c4a55",
+          "repeaterCandidates": [],
+          "behaviors": []
+        },
+        {
+          "order": 5,
+          "tag": "section",
+          "classes": "contact-band",
+          "family": "contact-band",
+          "heading": "Bir yerle başlayın. Gerisini birlikte şekillendirelim.",
+          "file": "pages/05-contact-band.html",
+          "sha256": "901b8121d108c472cf5d18794d4e8027a8d536103a60492459537e017c2f7c6f",
+          "repeaterCandidates": [],
+          "behaviors": []
+        },
+        {
+          "order": 6,
+          "tag": "section",
+          "classes": "section seo-overview",
+          "family": "section seo-overview",
+          "heading": "Scala Nova hakkında pratik bilgiler.",
+          "file": "pages/06-section-seo-overview.html",
+          "sha256": "b0eb1c52a35b21ddc738916f93a947e230c8e5336e665cd9b7406667d12d9931",
+          "repeaterCandidates": [],
+          "behaviors": [
+            "data-sitewide-seo"
+          ]
+        },
+        {
+          "order": 7,
+          "tag": "section",
+          "classes": "section section--paper seo-faq",
+          "family": "section section--paper seo-faq",
+          "heading": "Sık sorulan sorular.",
+          "file": "pages/07-section-section--paper-seo-faq.html",
+          "sha256": "17bbb1c328fbf2fedde0e8d105dad92206685ee986151dd6152f0b8ba6d73ec0",
+          "repeaterCandidates": [
+            {
+              "tag": "div",
+              "class": "faq-list",
+              "count": 5
+            }
+          ],
+          "behaviors": []
+        },
+        {
+          "order": 8,
+          "tag": "section",
+          "classes": "section home-journal",
+          "family": "section home-journal",
+          "heading": "Yola çıkmadan önce birkaç not.",
+          "file": "pages/08-section-home-journal.html",
+          "sha256": "8548b76df59d44b8a72691b6303238ecc8bcd5ab82dc34d58c517d245bcd8826",
+          "repeaterCandidates": [],
+          "behaviors": [
+            "data-category",
+            "data-guide-card",
+            "data-home-journal"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "tr/kisiye-ozel/index.html",
+      "sourceSha256": "3684d6ac1689753e1de6eba648d200a57b785a3b31cee4eeff7911d22070e590",
+      "title": "Kişiye Özel Seyahatler | Scala Nova",
+      "partsDirectory": "pages/kisiye-ozel",
+      "fragments": [
+        {
+          "order": 1,
+          "tag": "section",
+          "classes": "page-hero",
+          "family": "page-hero",
+          "heading": "Kişiye Özel Seyahatler",
+          "file": "pages/kisiye-ozel/01-page-hero.html",
+          "sha256": "46f631d1d718fe4a0aa1cd3c92bd64d3b21e5343a49aa65226d947bf13d4a0be",
+          "repeaterCandidates": [],
+          "behaviors": []
+        },
+        {
+          "order": 2,
+          "tag": "section",
+          "classes": "section",
+          "family": "section",
+          "heading": "Size göre tasarlanan bir rota.",
+          "file": "pages/kisiye-ozel/02-section.html",
+          "sha256": "16e3e2d6e28d851a363527da41fb8afb31ad90fc8fbec03a370eb7a61a43e30b",
+          "repeaterCandidates": [],
+          "behaviors": [
+            "data-demo-form",
+            "data-form-status",
+            "data-privacy-link"
+          ]
+        },
+        {
+          "order": 3,
+          "tag": "section",
+          "classes": "section seo-overview",
+          "family": "section seo-overview",
+          "heading": "Kişiye Özel Seyahatler için açık bir planlama akışı.",
+          "file": "pages/kisiye-ozel/03-section-seo-overview.html",
+          "sha256": "b9a8705234ade68cd42545b9f8d7c72d6640e6a9e05e2d1a9b72dafab9119e9f",
+          "repeaterCandidates": [],
+          "behaviors": [
+            "data-sitewide-seo"
+          ]
+        },
+        {
+          "order": 4,
+          "tag": "section",
+          "classes": "section section--paper seo-faq",
+          "family": "section section--paper seo-faq",
+          "heading": "Sık sorulan sorular.",
+          "file": "pages/kisiye-ozel/04-section-section--paper-seo-faq.html",
+          "sha256": "8a061c359b388888a07ac5da793ed05482fb988bd22c4b8c41f8b373115d7aa8",
+          "repeaterCandidates": [
+            {
+              "tag": "div",
+              "class": "faq-list",
+              "count": 5
+            }
+          ],
+          "behaviors": []
+        }
+      ]
+    },
+    {
+      "source": "tr/kullanim-kosullari/index.html",
+      "sourceSha256": "2dbf91986dff57bc6a48ac7090f70bbb727f2539b2e40f36845d6471a113e6c8",
+      "title": "Kullanım koşulları | Scala Nova",
+      "partsDirectory": "pages/kullanim-kosullari",
+      "fragments": [
+        {
+          "order": 1,
+          "tag": "div",
+          "classes": "container legal-layout",
+          "family": "container legal-layout",
+          "heading": "Kullanım koşulları",
+          "file": "pages/kullanim-kosullari/01-container-legal-layout.html",
+          "sha256": "64813e7a5741dde7150d52a9c8ff2f574aaedc97e2b29ca8552a0c0f05434209",
+          "repeaterCandidates": [],
+          "behaviors": [
+            "data-legal-extra"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "tr/kvkk-aydinlatma/index.html",
+      "sourceSha256": "54ff18ad46589d1dce63e6a0e6944eca7148f49d8ea2d778228037dc69940dd4",
+      "title": "KVKK aydınlatma | Scala Nova",
+      "partsDirectory": "pages/kvkk-aydinlatma",
+      "fragments": [
+        {
+          "order": 1,
+          "tag": "div",
+          "classes": "container legal-layout",
+          "family": "container legal-layout",
+          "heading": "KVKK aydınlatma",
+          "file": "pages/kvkk-aydinlatma/01-container-legal-layout.html",
+          "sha256": "2da283454ccd08838bbc43dc0d8acd5b38ada51b2f93c10891073daf7c163cd5",
+          "repeaterCandidates": [],
+          "behaviors": [
+            "data-legal-extra"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "tr/liman-turlari/index.html",
+      "sourceSha256": "a86bf8a905744fb313b92f5ef30499b1738a101e8e2e6f109e41e7c0a32dd619",
+      "title": "Kuşadası Liman Turları | Scala Nova",
+      "partsDirectory": "pages/liman-turlari",
+      "fragments": [
+        {
+          "order": 1,
+          "tag": "section",
+          "classes": "page-hero",
+          "family": "page-hero",
+          "heading": "Kuşadası Liman Turları",
+          "file": "pages/liman-turlari/01-page-hero.html",
+          "sha256": "6b2c9dbf3b2991a9935d4dd494ae6f51a1c77eff72dcfe6dc556991f8058c086",
+          "repeaterCandidates": [],
+          "behaviors": []
+        },
+        {
+          "order": 2,
+          "tag": "div",
+          "classes": "container stat-strip",
+          "family": "container stat-strip",
+          "heading": "",
+          "file": "pages/liman-turlari/02-container-stat-strip.html",
+          "sha256": "6e7e9b6d138e0066416247852d47cffc022d8b922b47eae8cd6b38fd25dbd0fe",
+          "repeaterCandidates": [],
+          "behaviors": []
+        },
+        {
+          "order": 3,
+          "tag": "section",
+          "classes": "section",
+          "family": "section",
+          "heading": "Kıyıda geçirdiğiniz günü Efes'e ayırın.",
+          "file": "pages/liman-turlari/03-section.html",
+          "sha256": "0c1da5e87c72663e35990a43641239fb98b098c3c2037861c52218b672cccb1b",
+          "repeaterCandidates": [],
+          "behaviors": [
+            "data-demo-form",
+            "data-form-status",
+            "data-privacy-link"
+          ]
+        },
+        {
+          "order": 4,
+          "tag": "section",
+          "classes": "section seo-overview",
+          "family": "section seo-overview",
+          "heading": "Kuşadası Liman Turları için açık bir planlama akışı.",
+          "file": "pages/liman-turlari/04-section-seo-overview.html",
+          "sha256": "b148d06746c9885afa33b32495e8a32792863a03281d888b9cb204b1b67c2cbe",
+          "repeaterCandidates": [],
+          "behaviors": [
+            "data-sitewide-seo"
+          ]
+        },
+        {
+          "order": 5,
+          "tag": "section",
+          "classes": "section section--paper seo-faq",
+          "family": "section section--paper seo-faq",
+          "heading": "Sık sorulan sorular.",
+          "file": "pages/liman-turlari/05-section-section--paper-seo-faq.html",
+          "sha256": "bc34612bc372e0ea0feb5cc11f443b2b2d140f9030f542006cacefc62e6f5480",
+          "repeaterCandidates": [
+            {
+              "tag": "div",
+              "class": "faq-list",
+              "count": 5
+            }
+          ],
+          "behaviors": []
+        }
+      ]
+    },
+    {
+      "source": "tr/rehber/efes-gezisine-hazirlik/index.html",
+      "sourceSha256": "291cd773e9b4ef0693dcb04ac69fb4adfbbfaa2e9bf7f589bfbb6d207a4029cf",
+      "title": "Efes gezisine hazırlık: yola çıkmadan önce | Scala Nova",
+      "partsDirectory": "pages/rehber/efes-gezisine-hazirlik",
+      "fragments": [
+        {
+          "order": 1,
+          "tag": "article",
+          "classes": "journal-article",
+          "family": "journal-article",
+          "heading": "Efes gezisine hazırlık: yola çıkmadan önce",
+          "file": "pages/rehber/efes-gezisine-hazirlik/01-journal-article.html",
+          "sha256": "06f3f1e087a7ecb0fea60350cb8d496d166593b615a619171e66af59891db31f",
+          "repeaterCandidates": [
+            {
+              "tag": "ol",
+              "class": "",
+              "count": 4
+            },
+            {
+              "tag": "div",
+              "class": "faq-list",
+              "count": 2
+            }
+          ],
+          "behaviors": []
+        },
+        {
+          "order": 2,
+          "tag": "section",
+          "classes": "journal-cta",
+          "family": "journal-cta",
+          "heading": "Okuduklarınızı bir yolculuğa dönüştürün.",
+          "file": "pages/rehber/efes-gezisine-hazirlik/02-journal-cta.html",
+          "sha256": "f00fc817e2b0363ea2b273e700d97d0e5c56f40b836c0108d7ec89d6b6cd1282",
+          "repeaterCandidates": [],
+          "behaviors": []
+        },
+        {
+          "order": 3,
+          "tag": "section",
+          "classes": "container journal-more",
+          "family": "container journal-more",
+          "heading": "Okumaya devam edin.",
+          "file": "pages/rehber/efes-gezisine-hazirlik/03-container-journal-more.html",
+          "sha256": "af4a6ff2adf1ce38298633fc6192e68fdb16f29c85ed271c136f2b9af7cc5699",
+          "repeaterCandidates": [],
+          "behaviors": [
+            "data-category",
+            "data-guide-card"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "tr/rehber/index.html",
+      "sourceSha256": "b70b1408b80c7831a60bfebf082b2dbcceb38689c1e735e6ad7b53285c0a1341",
+      "title": "Seyahat rehberi | Scala Nova",
+      "partsDirectory": "pages/rehber",
+      "fragments": [
+        {
+          "order": 1,
+          "tag": "div",
+          "classes": "container journal-index",
+          "family": "container journal-index",
+          "heading": "Ege’yi keşfetmeden önce.",
+          "file": "pages/rehber/01-container-journal-index.html",
+          "sha256": "b28969f4b20f717f123742a9abb89ddd8ce92e95efca5aa50922a37957657af7",
+          "repeaterCandidates": [],
+          "behaviors": [
+            "data-category",
+            "data-guide-card",
+            "data-guide-count",
+            "data-guide-empty",
+            "data-guide-filter",
+            "data-guide-filters",
+            "data-guide-index",
+            "data-guide-reset",
+            "data-guide-search",
+            "data-result-label"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "tr/rehber/kusadasi-kruvaziyer-turu-planlama/index.html",
+      "sourceSha256": "2bbc055f374fa0ef606d4724570ea764c06049c92863712df4a88a6bcb5ab6fd",
+      "title": "Kruvaziyerle Kuşadası: karadaki zamanı planlamak | Scala Nova",
+      "partsDirectory": "pages/rehber/kusadasi-kruvaziyer-turu-planlama",
+      "fragments": [
+        {
+          "order": 1,
+          "tag": "article",
+          "classes": "journal-article",
+          "family": "journal-article",
+          "heading": "Kruvaziyerle Kuşadası: karadaki zamanı planlamak",
+          "file": "pages/rehber/kusadasi-kruvaziyer-turu-planlama/01-journal-article.html",
+          "sha256": "a2c0e411edbf9575fcfd9fb51eea9f5f1cd7bac8de40956d51c0a08147d9345b",
+          "repeaterCandidates": [
+            {
+              "tag": "ol",
+              "class": "",
+              "count": 4
+            },
+            {
+              "tag": "div",
+              "class": "faq-list",
+              "count": 2
+            }
+          ],
+          "behaviors": []
+        },
+        {
+          "order": 2,
+          "tag": "section",
+          "classes": "journal-cta",
+          "family": "journal-cta",
+          "heading": "Okuduklarınızı bir yolculuğa dönüştürün.",
+          "file": "pages/rehber/kusadasi-kruvaziyer-turu-planlama/02-journal-cta.html",
+          "sha256": "f00fc817e2b0363ea2b273e700d97d0e5c56f40b836c0108d7ec89d6b6cd1282",
+          "repeaterCandidates": [],
+          "behaviors": []
+        },
+        {
+          "order": 3,
+          "tag": "section",
+          "classes": "container journal-more",
+          "family": "container journal-more",
+          "heading": "Okumaya devam edin.",
+          "file": "pages/rehber/kusadasi-kruvaziyer-turu-planlama/03-container-journal-more.html",
+          "sha256": "20a29c6ca13bc731d07132f2bf203ac38d839d7647ca0dc176dde3a4ea9ac617",
+          "repeaterCandidates": [],
+          "behaviors": [
+            "data-category",
+            "data-guide-card"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "tr/rehber/kusadasinda-bir-gun/index.html",
+      "sourceSha256": "05f7e51e2b153bf33f3da9ea906215aa94688d53e86c6c74cadc188f1622b4e4",
+      "title": "Kuşadası’nda bir gün: rotanızı nasıl kurmalısınız? | Scala Nova",
+      "partsDirectory": "pages/rehber/kusadasinda-bir-gun",
+      "fragments": [
+        {
+          "order": 1,
+          "tag": "article",
+          "classes": "journal-article",
+          "family": "journal-article",
+          "heading": "Kuşadası’nda bir gün: rotanızı nasıl kurmalısınız?",
+          "file": "pages/rehber/kusadasinda-bir-gun/01-journal-article.html",
+          "sha256": "95621117fea1fe1fde85abe53e9e492290b8157562e8733f4426052b486924e1",
+          "repeaterCandidates": [
+            {
+              "tag": "ol",
+              "class": "",
+              "count": 4
+            },
+            {
+              "tag": "div",
+              "class": "faq-list",
+              "count": 2
+            }
+          ],
+          "behaviors": []
+        },
+        {
+          "order": 2,
+          "tag": "section",
+          "classes": "journal-cta",
+          "family": "journal-cta",
+          "heading": "Okuduklarınızı bir yolculuğa dönüştürün.",
+          "file": "pages/rehber/kusadasinda-bir-gun/02-journal-cta.html",
+          "sha256": "f00fc817e2b0363ea2b273e700d97d0e5c56f40b836c0108d7ec89d6b6cd1282",
+          "repeaterCandidates": [],
+          "behaviors": []
+        },
+        {
+          "order": 3,
+          "tag": "section",
+          "classes": "container journal-more",
+          "family": "container journal-more",
+          "heading": "Okumaya devam edin.",
+          "file": "pages/rehber/kusadasinda-bir-gun/03-container-journal-more.html",
+          "sha256": "69c80efe35cc41bc3bee320e2c88ea8ff12d8aa8171cdf2a2bb5f5b6e2275efb",
+          "repeaterCandidates": [],
+          "behaviors": [
+            "data-category",
+            "data-guide-card"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "tr/transferler/index.html",
+      "sourceSha256": "7300ab29332e5c1ad3ed4a6603289ade9c2d212b3e523b1fef441107669f2e96",
+      "title": "Özel Transferler | Scala Nova",
+      "partsDirectory": "pages/transferler",
+      "fragments": [
+        {
+          "order": 1,
+          "tag": "section",
+          "classes": "page-hero",
+          "family": "page-hero",
+          "heading": "Özel Transferler",
+          "file": "pages/transferler/01-page-hero.html",
+          "sha256": "d8bc1b96b4e25884bad79ed0d3ab57f39fe33832ffa0f8ea1561fb01487d7656",
+          "repeaterCandidates": [],
+          "behaviors": []
+        },
+        {
+          "order": 2,
+          "tag": "section",
+          "classes": "section",
+          "family": "section",
+          "heading": "Havalimanı transferi",
+          "file": "pages/transferler/02-section.html",
+          "sha256": "22c1653aa77f2fe50a27ac6f6bb92ffbbd16c468d2b3988136f6d23e28658bf2",
+          "repeaterCandidates": [],
+          "behaviors": []
+        },
+        {
+          "order": 3,
+          "tag": "section",
+          "classes": "section section--paper",
+          "family": "section section--paper",
+          "heading": "Rotayı ve zamanı paylaşın.",
+          "file": "pages/transferler/03-section-section--paper.html",
+          "sha256": "f02c95fad8c948032be104c5606febbcf665541878e39cd332daf23dd5a56a39",
+          "repeaterCandidates": [],
+          "behaviors": [
+            "data-demo-form",
+            "data-form-status",
+            "data-privacy-link"
+          ]
+        },
+        {
+          "order": 4,
+          "tag": "section",
+          "classes": "section seo-overview",
+          "family": "section seo-overview",
+          "heading": "Özel Transferler için açık bir planlama akışı.",
+          "file": "pages/transferler/04-section-seo-overview.html",
+          "sha256": "68c58b471efd8ba524caf746973509ccb4970a7906ceef40c2ee3722904969ef",
+          "repeaterCandidates": [],
+          "behaviors": [
+            "data-sitewide-seo"
+          ]
+        },
+        {
+          "order": 5,
+          "tag": "section",
+          "classes": "section section--paper seo-faq",
+          "family": "section section--paper seo-faq",
+          "heading": "Sık sorulan sorular.",
+          "file": "pages/transferler/05-section-section--paper-seo-faq.html",
+          "sha256": "98f1ffc5617f4307825da5b8e647646dd56b7bbc108ec8a686a49f362348dc49",
+          "repeaterCandidates": [
+            {
+              "tag": "div",
+              "class": "faq-list",
+              "count": 5
+            }
+          ],
+          "behaviors": []
+        }
+      ]
+    },
+    {
+      "source": "tr/turlar/efes-ozel-turu/index.html",
+      "sourceSha256": "7b711cd21b0626fd4b17bce0980d1ff2cbad53198be18be8a511de10e2cd551c",
+      "title": "Efes Özel Turu | Scala Nova",
+      "partsDirectory": "pages/turlar/efes-ozel-turu",
+      "fragments": [
+        {
+          "order": 1,
+          "tag": "section",
+          "classes": "tour-detail-title",
+          "family": "tour-detail-title",
+          "heading": "Efes’in hikâyesinikendi ritminizde izleyin.",
+          "file": "pages/turlar/efes-ozel-turu/01-tour-detail-title.html",
+          "sha256": "a6918920f98c52aa14b3b0a003505085c08141d725d3327a0509d1eab21ea04b",
+          "repeaterCandidates": [],
+          "behaviors": []
+        },
+        {
+          "order": 2,
+          "tag": "section",
+          "classes": "tour-overview-section",
+          "family": "tour-overview-section",
+          "heading": "",
+          "file": "pages/turlar/efes-ozel-turu/02-tour-overview-section.html",
+          "sha256": "bb74feaaca643d0b6801ee3333c1a194b967649d14d103a22bebe5fc850a8186",
+          "repeaterCandidates": [
+            {
+              "tag": "ul",
+              "class": "tour-visit-list",
+              "count": 3
+            }
+          ],
+          "behaviors": [
+            "data-scroll-form"
+          ]
+        },
+        {
+          "order": 3,
+          "tag": "section",
+          "classes": "section section--paper",
+          "family": "section section--paper",
+          "heading": "Bir günde, binlerce yıllık bir yolculuk.",
+          "file": "pages/turlar/efes-ozel-turu/03-section-section--paper.html",
+          "sha256": "54021165e4281942a04eb85f2281ec0d047412256d582606032c73aa88ab48f5",
+          "repeaterCandidates": [
+            {
+              "tag": "ul",
+              "class": "clean-list",
+              "count": 4
+            },
+            {
+              "tag": "ul",
+              "class": "clean-list clean-list--excluded",
+              "count": 4
+            }
+          ],
+          "behaviors": []
+        },
+        {
+          "order": 4,
+          "tag": "section",
+          "classes": "section tour-program",
+          "family": "section tour-program",
+          "heading": "Efes programı",
+          "file": "pages/turlar/efes-ozel-turu/04-section-tour-program.html",
+          "sha256": "66f6d90f4fa39a56fe8363de6a58a73184b77eaa164e437c912e4e7ad2513bcc",
+          "repeaterCandidates": [
+            {
+              "tag": "ol",
+              "class": "route route--detailed",
+              "count": 9
+            }
+          ],
+          "behaviors": [
+            "data-expand-all",
+            "data-route-trigger"
+          ]
+        },
+        {
+          "order": 5,
+          "tag": "section",
+          "classes": "section tour-request",
+          "family": "section tour-request",
+          "heading": "Bu rotayı size göre şekillendirelim.",
+          "file": "pages/turlar/efes-ozel-turu/05-section-tour-request.html",
+          "sha256": "2720926aab2f5554a0f0566167e57c2578c327cdee9753534704f830c067a7b2",
+          "repeaterCandidates": [],
+          "behaviors": [
+            "data-demo-form",
+            "data-form-status",
+            "data-privacy-link"
+          ]
+        },
+        {
+          "order": 6,
+          "tag": "section",
+          "classes": "section seo-overview",
+          "family": "section seo-overview",
+          "heading": "Efes Özel Turu için açık bir planlama akışı.",
+          "file": "pages/turlar/efes-ozel-turu/06-section-seo-overview.html",
+          "sha256": "35a7f8a8f3d5c5ec8eced27a39113522efa9c71ac9ee504ec363008eb45c3cce",
+          "repeaterCandidates": [],
+          "behaviors": [
+            "data-sitewide-seo"
+          ]
+        },
+        {
+          "order": 7,
+          "tag": "section",
+          "classes": "section section--paper seo-faq",
+          "family": "section section--paper seo-faq",
+          "heading": "Sık sorulan sorular.",
+          "file": "pages/turlar/efes-ozel-turu/07-section-section--paper-seo-faq.html",
+          "sha256": "9fa1bb25c185a50849c3efd3a92698c6b2be6f19ac707e3fb56e82fa5ac9fc91",
+          "repeaterCandidates": [
+            {
+              "tag": "div",
+              "class": "faq-list",
+              "count": 5
+            }
+          ],
+          "behaviors": []
+        }
+      ]
+    },
+    {
+      "source": "tr/turlar/index.html",
+      "sourceSha256": "2ceca05f829e99d6aab7940f3b863ea19cbbeff01033feed5a1adda9050de82b",
+      "title": "Özel Turlar | Scala Nova",
+      "partsDirectory": "pages/turlar",
+      "fragments": [
+        {
+          "order": 1,
+          "tag": "section",
+          "classes": "page-hero",
+          "family": "page-hero",
+          "heading": "Özel Turlar",
+          "file": "pages/turlar/01-page-hero.html",
+          "sha256": "260cccc6108921a164088c805dd4effcd55504df0b38ca68db5f0237662d3aee",
+          "repeaterCandidates": [],
+          "behaviors": []
+        },
+        {
+          "order": 2,
+          "tag": "section",
+          "classes": "section",
+          "family": "section",
+          "heading": "Özel turlar, açık ve anlaşılır.",
+          "file": "pages/turlar/02-section.html",
+          "sha256": "712a825f88ea0731ca755c8c28a86a627016ef61088d31f21f60791b62c9da00",
+          "repeaterCandidates": [],
+          "behaviors": []
+        },
+        {
+          "order": 3,
+          "tag": "section",
+          "classes": "section seo-overview",
+          "family": "section seo-overview",
+          "heading": "Özel Turlar için açık bir planlama akışı.",
+          "file": "pages/turlar/03-section-seo-overview.html",
+          "sha256": "4ab7691ed18638a8d1499eb3b8800b3c9a8faf01e5ca49dbb06c3b3be0a46a37",
+          "repeaterCandidates": [],
+          "behaviors": [
+            "data-sitewide-seo"
+          ]
+        },
+        {
+          "order": 4,
+          "tag": "section",
+          "classes": "section section--paper seo-faq",
+          "family": "section section--paper seo-faq",
+          "heading": "Sık sorulan sorular.",
+          "file": "pages/turlar/04-section-section--paper-seo-faq.html",
+          "sha256": "d77cb5bc799bc7b0a8325635a17b325dad3e8dd22659869ef815ac3c5acfa361",
+          "repeaterCandidates": [
+            {
+              "tag": "div",
+              "class": "faq-list",
+              "count": 5
+            }
+          ],
+          "behaviors": []
+        }
+      ]
+    }
+  ],
+  "families": {
+    "activity-detail-hero": 4,
+    "contact-band": 1,
+    "container destination-summary": 1,
+    "container journal-index": 1,
+    "container journal-more": 3,
+    "container legal-layout": 5,
+    "container stat-strip": 1,
+    "destination-tailor-cta": 1,
+    "finder": 1,
+    "hero hero-slider": 1,
+    "journal-article": 3,
+    "journal-cta": 3,
+    "journey-strip": 1,
+    "page-hero": 16,
+    "page-hero kusadasi-hero": 1,
+    "section": 26,
+    "section activity-detail-cta": 4,
+    "section destination-highlights": 1,
+    "section guide-hub": 1,
+    "section home-journal": 1,
+    "section nearby-destinations": 1,
+    "section recommended-journeys": 1,
+    "section section--paper": 10,
+    "section section--paper destination-faq": 1,
+    "section section--paper seo-faq": 16,
+    "section seo-overview": 16,
+    "section tour-program": 1,
+    "section tour-request": 1,
+    "section visit-rhythm": 1,
+    "tour-detail-title": 1,
+    "tour-overview-section": 1
+  },
+  "components": [
+    {
+      "kind": "logo",
+      "status": "source-extracted-unmapped",
+      "file": "components/logo/f90463db1f03.html",
+      "exampleSource": "tr/acente-ve-belgeler/index.html",
+      "uses": 64
+    },
+    {
+      "kind": "navigation",
+      "status": "source-extracted-unmapped",
+      "file": "components/navigation/4ab0ccb385f3.html",
+      "exampleSource": "tr/acente-ve-belgeler/index.html",
+      "uses": 32
+    },
+    {
+      "kind": "language-selector",
+      "status": "source-extracted-unmapped",
+      "file": "components/language-selector/f139f72996c6.html",
+      "exampleSource": "tr/acente-ve-belgeler/index.html",
+      "uses": 32
+    },
+    {
+      "kind": "mobile-menu-toggle",
+      "status": "source-extracted-unmapped",
+      "file": "components/mobile-menu-toggle/79183bc406ea.html",
+      "exampleSource": "tr/acente-ve-belgeler/index.html",
+      "uses": 32
+    },
+    {
+      "kind": "breadcrumb",
+      "status": "source-extracted-unmapped",
+      "file": "components/breadcrumb/fb9b79e01991.html",
+      "exampleSource": "tr/acente-ve-belgeler/index.html",
+      "uses": 6
+    },
+    {
+      "kind": "breadcrumb",
+      "status": "source-extracted-unmapped",
+      "file": "components/breadcrumb/c0b2caf2b5cb.html",
+      "exampleSource": "tr/aktiviteler/balon-turu/index.html",
+      "uses": 4
+    },
+    {
+      "kind": "activity-row",
+      "status": "source-extracted-unmapped",
+      "file": "components/activity-row/1f549ce76a9e.html",
+      "exampleSource": "tr/aktiviteler/index.html",
+      "uses": 4
+    },
+    {
+      "kind": "form",
+      "status": "source-extracted-unmapped",
+      "file": "components/form/33df807c2ed9.html",
+      "exampleSource": "tr/b2b/index.html",
+      "uses": 1
+    },
+    {
+      "kind": "section-heading",
+      "status": "source-extracted-unmapped",
+      "file": "components/section-heading/77b825b1c7a6.html",
+      "exampleSource": "tr/destinasyonlar/didim/index.html",
+      "uses": 19
+    },
+    {
+      "kind": "section-heading",
+      "status": "source-extracted-unmapped",
+      "file": "components/section-heading/1d882eaa63ea.html",
+      "exampleSource": "tr/destinasyonlar/didim/index.html",
+      "uses": 17
+    },
+    {
+      "kind": "accordion-list",
+      "status": "source-extracted-unmapped",
+      "file": "components/accordion-list/fa66867edd05.html",
+      "exampleSource": "tr/destinasyonlar/didim/index.html",
+      "uses": 16
+    },
+    {
+      "kind": "accordion-item",
+      "status": "source-extracted-unmapped",
+      "file": "components/accordion-item/13ec7ac78a0d.html",
+      "exampleSource": "tr/destinasyonlar/didim/index.html",
+      "uses": 94
+    },
+    {
+      "kind": "service-card",
+      "status": "source-extracted-unmapped",
+      "file": "components/service-card/256a6c1f734e.html",
+      "exampleSource": "tr/destinasyonlar/index.html",
+      "uses": 8
+    },
+    {
+      "kind": "breadcrumb",
+      "status": "source-extracted-unmapped",
+      "file": "components/breadcrumb/b6cb550eb36c.html",
+      "exampleSource": "tr/destinasyonlar/kusadasi/index.html",
+      "uses": 1
+    },
+    {
+      "kind": "section-heading",
+      "status": "source-extracted-unmapped",
+      "file": "components/section-heading/b29eeece73ea.html",
+      "exampleSource": "tr/destinasyonlar/kusadasi/index.html",
+      "uses": 4
+    },
+    {
+      "kind": "place-item",
+      "status": "source-extracted-unmapped",
+      "file": "components/place-item/2512ecff3913.html",
+      "exampleSource": "tr/destinasyonlar/kusadasi/index.html",
+      "uses": 2
+    },
+    {
+      "kind": "place-item",
+      "status": "source-extracted-unmapped",
+      "file": "components/place-item/b833079a454d.html",
+      "exampleSource": "tr/destinasyonlar/kusadasi/index.html",
+      "uses": 1
+    },
+    {
+      "kind": "place-item",
+      "status": "source-extracted-unmapped",
+      "file": "components/place-item/e2f418977b93.html",
+      "exampleSource": "tr/destinasyonlar/kusadasi/index.html",
+      "uses": 1
+    },
+    {
+      "kind": "accordion-list",
+      "status": "source-extracted-unmapped",
+      "file": "components/accordion-list/30f5b10b65c2.html",
+      "exampleSource": "tr/destinasyonlar/kusadasi/index.html",
+      "uses": 1
+    },
+    {
+      "kind": "form",
+      "status": "source-extracted-unmapped",
+      "file": "components/form/a6a660560673.html",
+      "exampleSource": "tr/iletisim/index.html",
+      "uses": 1
+    },
+    {
+      "kind": "slider-item",
+      "status": "source-extracted-unmapped",
+      "file": "components/slider-item/dd3a607d01bb.html",
+      "exampleSource": "tr/index.html",
+      "uses": 1
+    },
+    {
+      "kind": "slider-item",
+      "status": "source-extracted-unmapped",
+      "file": "components/slider-item/8e31a3a6949f.html",
+      "exampleSource": "tr/index.html",
+      "uses": 2
+    },
+    {
+      "kind": "form",
+      "status": "source-extracted-unmapped",
+      "file": "components/form/c33427dd0b0a.html",
+      "exampleSource": "tr/index.html",
+      "uses": 1
+    },
+    {
+      "kind": "journal-card",
+      "status": "source-extracted-unmapped",
+      "file": "components/journal-card/e9fa8e705954.html",
+      "exampleSource": "tr/index.html",
+      "uses": 9
+    },
+    {
+      "kind": "form",
+      "status": "source-extracted-unmapped",
+      "file": "components/form/d4a11b0b3e65.html",
+      "exampleSource": "tr/kisiye-ozel/index.html",
+      "uses": 1
+    },
+    {
+      "kind": "form",
+      "status": "source-extracted-unmapped",
+      "file": "components/form/a19b34691228.html",
+      "exampleSource": "tr/liman-turlari/index.html",
+      "uses": 1
+    },
+    {
+      "kind": "breadcrumb",
+      "status": "source-extracted-unmapped",
+      "file": "components/breadcrumb/9698552c51bf.html",
+      "exampleSource": "tr/rehber/efes-gezisine-hazirlik/index.html",
+      "uses": 3
+    },
+    {
+      "kind": "accordion-list",
+      "status": "source-extracted-unmapped",
+      "file": "components/accordion-list/8bbdad3f2db0.html",
+      "exampleSource": "tr/rehber/efes-gezisine-hazirlik/index.html",
+      "uses": 3
+    },
+    {
+      "kind": "journal-card",
+      "status": "source-extracted-unmapped",
+      "file": "components/journal-card/5006e9ede75d.html",
+      "exampleSource": "tr/rehber/index.html",
+      "uses": 1
+    },
+    {
+      "kind": "journal-card",
+      "status": "source-extracted-unmapped",
+      "file": "components/journal-card/3992d71db0a7.html",
+      "exampleSource": "tr/rehber/index.html",
+      "uses": 2
+    },
+    {
+      "kind": "form",
+      "status": "source-extracted-unmapped",
+      "file": "components/form/f1d343a24ede.html",
+      "exampleSource": "tr/transferler/index.html",
+      "uses": 1
+    },
+    {
+      "kind": "breadcrumb",
+      "status": "source-extracted-unmapped",
+      "file": "components/breadcrumb/5b18a635f35f.html",
+      "exampleSource": "tr/turlar/efes-ozel-turu/index.html",
+      "uses": 1
+    },
+    {
+      "kind": "route-toggle",
+      "status": "source-extracted-unmapped",
+      "file": "components/route-toggle/ecd75e8e2adb.html",
+      "exampleSource": "tr/turlar/efes-ozel-turu/index.html",
+      "uses": 5
+    },
+    {
+      "kind": "form",
+      "status": "source-extracted-unmapped",
+      "file": "components/form/d144ac2b4b1e.html",
+      "exampleSource": "tr/turlar/efes-ozel-turu/index.html",
+      "uses": 1
+    },
+    {
+      "kind": "service-card",
+      "status": "source-extracted-unmapped",
+      "file": "components/service-card/e87bef4fef63.html",
+      "exampleSource": "tr/turlar/index.html",
+      "uses": 1
+    },
+    {
+      "kind": "service-card",
+      "status": "source-extracted-unmapped",
+      "file": "components/service-card/ded310fe6540.html",
+      "exampleSource": "tr/turlar/index.html",
+      "uses": 2
+    }
+  ],
+  "assets": {
+    "css": "html/assets/css/styles.css",
+    "jsAudit": "html/assets/js/app.js",
+    "fonts": "html/assets/fonts",
+    "images": "html/assets/images"
+  },
+  "importedDesignSystem": {
+    "id": "system.scalanova-tr",
+    "version": "1.0.0"
+  },
+  "importedCounts": {
+    "pages": 32,
+    "blocks": 41,
+    "templates": 6,
+    "sharedRegions": 2
+  }
+}

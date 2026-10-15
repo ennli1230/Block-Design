@@ -1,0 +1,54 @@
+{
+  "items": [
+    {
+      "ref": {
+        "id": "contact",
+        "version": "1.1.0"
+      },
+      "label": "İletişim"
+    },
+    {
+      "ref": {
+        "id": "travel",
+        "version": "1.1.0"
+      },
+      "label": "Kişiye özel seyahat"
+    },
+    {
+      "ref": {
+        "id": "partner",
+        "version": "1.1.0"
+      },
+      "label": "Acente iş ortaklığı"
+    },
+    {
+      "ref": {
+        "id": "transfer",
+        "version": "1.1.0"
+      },
+      "label": "Transfer talebi"
+    },
+    {
+      "ref": {
+        "id": "shore",
+        "version": "1.1.0"
+      },
+      "label": "Liman turu talebi"
+    },
+    {
+      "ref": {
+        "id": "booking",
+        "version": "1.1.0"
+      },
+      "label": "Tur rezervasyonu"
+    },
+    {
+      "ref": {
+        "id": "search",
+        "version": "1.1.0"
+      },
+      "label": "Tur arama"
+    }
+  ],
+  "nextCursor": null
+}

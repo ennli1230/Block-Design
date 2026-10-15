@@ -1,0 +1,35 @@
+{
+  "name": "@blockdesign/editor",
+  "version": "0.1.0",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    },
+    "./style.css": "./src/style.css",
+    "./forms": {
+      "types": "./src/forms-entry.ts",
+      "default": "./src/forms-entry.ts"
+    },
+    "./runtime": {
+      "types": "./src/runtime-entry.ts",
+      "default": "./src/runtime-entry.ts"
+    }
+  },
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "build:vanilla": "vite build --config vite.config.ts",
+    "build:esm": "vite build --config vite.esm.config.ts",
+    "test": "node --experimental-strip-types --test src/export-assets.test.js src/preview-document.test.js src/repeater-authoring.test.js src/source-preview.test.js src/block-library.test.js src/localization-seo.test.js src/ui-i18n.test.js src/publication.test.js src/extensions.test.js"
+  },
+  "dependencies": {
+    "@blockdesign/contracts": "0.1.0",
+    "@blockdesign/core": "0.1.0",
+    "@blockdesign/grapesjs-bridge": "0.1.0",
+    "@blockdesign/adapters": "0.1.0",
+    "@vitejs/plugin-vue": "6.0.10",
+    "grapesjs": "0.23.6",
+    "vue": "3.5.43"
+  }
+}

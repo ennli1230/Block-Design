@@ -1,0 +1,35 @@
+{
+  "name": "blockdesign-workspace",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "npm run --workspace @blockdesign/demo dev",
+    "build": "npm run --workspace @blockdesign/demo build",
+    "typecheck": "npm --workspace @blockdesign/core run typecheck && npm --workspace @blockdesign/grapesjs-bridge run typecheck && npm --workspace @blockdesign/editor run typecheck && npm --workspace @blockdesign/demo run typecheck && tsc -p examples/custom-backend/tsconfig.json",
+    "test": "npm --workspace @blockdesign/core run test && npm --workspace @blockdesign/adapters run test && npm --workspace @blockdesign/grapesjs-bridge run test && npm --workspace @blockdesign/editor run test && npm --workspace @blockdesign/demo run test",
+    "test:all": "npm test && cd server && go test ./...",
+    "api": "npm --workspace @blockdesign/demo run api",
+    "start": "npm run api",
+    "build:vanilla": "npm --workspace @blockdesign/editor run build:vanilla",
+    "build:esm": "npm --workspace @blockdesign/editor run build:esm",
+    "build:all": "npm run build && npm run build:esm && npm run build:vanilla",
+    "measure:bundle": "node scripts/measure-bundles.mjs",
+    "go:version": "go version",
+    "format": "prettier --write \"apps/**/*.{ts,vue,css,html}\" \"packages/**/*.{ts,vue,css}\""
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "6.0.10",
+    "prettier": "3.6.2",
+    "typescript": "6.0.3",
+    "vite": "8.3.4",
+    "vue-tsc": "3.0.10"
+  }
+}

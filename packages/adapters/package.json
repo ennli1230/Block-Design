@@ -1,0 +1,16 @@
+{
+  "name": "@blockdesign/adapters",
+  "version": "0.1.0",
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test src/index.test.js src/forms.test.js"
+  },
+  "dependencies": {"@blockdesign/contracts": "0.1.0"}
+}

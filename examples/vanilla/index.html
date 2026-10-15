@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BlockDesign vanilla entegrasyonu</title>
+    <link rel="stylesheet" href="/dist/vanilla/editor.css" />
+    <style>
+      html, body, #editor { width: 100%; height: 100%; margin: 0; }
+    </style>
+  </head>
+  <body>
+    <div id="editor"></div>
+    <script src="/dist/vanilla/blockdesign-editor.iife.js"></script>
+    <script>
+      const editor = BlockDesign.mountEditor('#editor', {
+        language: 'tr',
+        mode: 'content',
+        onSave: ({ documentId, revision }) => console.info('Saved', documentId, revision),
+        onError: (error) => console.error(error),
+      });
+      window.addEventListener('pagehide', () => { void editor.destroy(); }, { once: true });
+    </script>
+  </body>
+</html>

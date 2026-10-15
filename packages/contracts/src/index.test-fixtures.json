@@ -1,0 +1,13 @@
+{
+  "documentVersion": 1,
+  "documentKind": "page",
+  "engine": "grapesjs",
+  "engineVersion": "0.23.6",
+  "revision": "1",
+  "designSystemRef": {"id":"system.studio-neutral","version":"1.0.0"},
+  "templateRef": null,
+  "sharedRegionRefs": [],
+  "blocks": [],
+  "projectData": {"pages":[{"name":"Page","component":{"type":"wrapper","components":[]}}]},
+  "editorState": {"viewport":"desktop"}
+}

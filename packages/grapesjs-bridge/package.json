@@ -1,0 +1,17 @@
+{
+  "name": "@blockdesign/grapesjs-bridge",
+  "version": "0.1.0",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    },
+    "./html-import": {
+      "types": "./src/html-import.ts",
+      "default": "./src/html-import.ts"
+    }
+  },
+  "scripts": {"typecheck": "tsc -p tsconfig.json --noEmit", "test": "node --experimental-strip-types --test src/html-import.test.js src/preview.test.js src/canvas-css.test.js"},
+  "dependencies": {"@blockdesign/contracts": "0.1.0", "@blockdesign/core": "0.1.0", "grapesjs": "0.23.6", "postcss": "8.5.29"}
+}

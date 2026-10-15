@@ -1,0 +1,107 @@
+{
+  "ref": {
+    "id": "partner",
+    "version": "1.1.0"
+  },
+  "label": "Acente iş ortaklığı",
+  "locale": "tr",
+  "fields": [
+    {
+      "fieldId": "company",
+      "label": "Acente / şirket adı",
+      "type": "text",
+      "validation": {
+        "required": true,
+        "maxLength": 200
+      }
+    },
+    {
+      "fieldId": "country",
+      "label": "Ülke",
+      "type": "text",
+      "validation": {
+        "required": true,
+        "maxLength": 100
+      }
+    },
+    {
+      "fieldId": "full-name",
+      "label": "İlgili kişinin adı",
+      "type": "text",
+      "validation": {
+        "required": true,
+        "maxLength": 120
+      }
+    },
+    {
+      "fieldId": "email",
+      "label": "İş e-postası",
+      "type": "email",
+      "validation": {
+        "required": true,
+        "maxLength": 200
+      }
+    },
+    {
+      "fieldId": "website",
+      "label": "Web sitesi (isteğe bağlı)",
+      "type": "text",
+      "validation": {
+        "required": false,
+        "maxLength": 300
+      },
+      "placeholder": "https://"
+    },
+    {
+      "fieldId": "interest",
+      "label": "İş birliği alanı",
+      "type": "select",
+      "validation": {
+        "required": true
+      },
+      "options": [
+        {
+          "value": "private-tours",
+          "label": "Özel turlar"
+        },
+        {
+          "value": "shore",
+          "label": "Liman gezileri"
+        },
+        {
+          "value": "transfers",
+          "label": "Transferler"
+        },
+        {
+          "value": "tailor-made",
+          "label": "Kişiye özel programlar"
+        },
+        {
+          "value": "multiple",
+          "label": "Birden fazla hizmet"
+        }
+      ]
+    },
+    {
+      "fieldId": "message",
+      "label": "Planladığınız iş birliği",
+      "type": "textarea",
+      "validation": {
+        "required": true,
+        "maxLength": 3000
+      },
+      "layout": {
+        "span": 2
+      }
+    }
+  ],
+  "layout": {
+    "columns": 2
+  },
+  "action": {
+    "adapterId": "demo-cms",
+    "actionId": "partner",
+    "kind": "submit",
+    "label": "İş ortaklığı talebi oluştur"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "ref": {
+    "id": "search",
+    "version": "1.0.0"
+  },
+  "label": "Tur arama",
+  "locale": "tr",
+  "layout": {
+    "columns": 2
+  },
+  "fields": [
+    {
+      "fieldId": "destination",
+      "type": "select",
+      "label": "Destinasyon",
+      "validation": {
+        "required": true
+      },
+      "options": {
+        "providerId": "demo-form-options",
+        "collectionId": "destinations",
+        "labelField": "label",
+        "searchable": true
+      }
+    },
+    {
+      "fieldId": "tour",
+      "type": "select",
+      "label": "Tur",
+      "help": "Önce destinasyonu seçin.",
+      "validation": {
+        "required": true
+      },
+      "options": {
+        "providerId": "demo-form-options",
+        "collectionId": "tours",
+        "labelField": "label",
+        "dependencies": [
+          {
+            "fieldId": "destination",
+            "filterField": "destinationId"
+          }
+        ]
+      }
+    }
+  ],
+  "action": {
+    "adapterId": "demo-cms",
+    "actionId": "search",
+    "kind": "search",
+    "label": "Turları göster"
+  }
+}

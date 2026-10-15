@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>CMS içinde BlockDesign</title>
+    <style>
+      body {
+        margin: 0;
+        font: 14px system-ui;
+        background: #f4f6fa;
+        color: #243048;
+      }
+      header {
+        height: 56px;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 12px 24px;
+        background: #243a61;
+        color: white;
+      }
+      header strong {
+        margin-right: auto;
+      }
+      header button {
+        border: 1px solid #6d83a5;
+        border-radius: 5px;
+        padding: 7px 11px;
+        background: #324e7b;
+        color: white;
+        cursor: pointer;
+      }
+      main {
+        padding: 16px;
+      }
+      #editor {
+        height: calc(100vh - 110px);
+        min-height: 480px;
+        border: 1px solid #d7dfe9;
+      }
+      #status {
+        margin: 0 0 10px;
+        color: #526481;
+      }
+      pre {
+        white-space: pre-wrap;
+        max-height: 350px;
+        overflow: auto;
+        background: white;
+        padding: 16px;
+      }
+      #published {
+        background: white;
+        padding: 20px;
+      }
+      #published[hidden] {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <strong>Örnek CMS · Sayfa düzenle</strong
+      ><button id="design">Tasarım modu</button
+      ><button id="content">İçerik modu</button
+      ><button id="preview">Önizle</button
+      ><button id="save">CMS’e kaydet</button
+      ><button id="json">JSON belgeyi göster</button
+      ><button id="publish">Yayın çıktısını üret</button>
+    </header>
+    <main>
+      <p id="status">Editör yükleniyor…</p>
+      <div id="editor"></div>
+      <pre id="document" hidden></pre>
+      <pre id="bundle" hidden></pre>
+      <div id="published" hidden></div>
+    </main>
+    <script type="module">
+      import {
+        mountEditor,
+        renderPageDocument,
+      } from "../../packages/editor/src/index.ts";
+      import {
+        createEmptyDocument,
+        makeInstance,
+        composableDefinitions,
+      } from "../../packages/core/src/index.ts";
+      import { sliderDefinition } from "../../packages/core/src/catalog.ts";
+      import {
+        HttpStorageAdapter,
+        HttpContentProviderAdapter,
+        HttpAssetAdapter,
+      } from "../../packages/adapters/src/index.ts";
+      const definitions = [...composableDefinitions, sliderDefinition];
+      const doc = createEmptyDocument();
+      doc.blocks = definitions.map(makeInstance);
+      doc.projectData = {
+        pages: [
+          {
+            id: "cms-page",
+            name: "CMS örneği",
+            component: {
+              type: "wrapper",
+              components: [
+                {
+                  type: "default",
+                  tagName: "section",
+                  attributes: {
+                    "data-bd-node": "cms-section",
+                    "data-bd-container": "true",
+                    class: "bd-section-surface",
+                  },
+                  components: [
+                    {
+                      type: "default",
+                      tagName: "h1",
+                      attributes: { "data-bd-node": "cms-title" },
+                      components: ["CMS içindeki sayfam"],
+                    },
+                    ...doc.blocks.map((block) => ({
+                      type: "default",
+                      tagName: "div",
+                      attributes: {
+                        "data-bd-placeholder-id": block.instanceId,
+                        "data-bd-placeholder-definition": `${block.definitionRef.id}@${block.definitionRef.version}`,
+                      },
+                      components: [],
+                    })),
+                  ],
+                },
+              ],
+            },
+          },
+        ],
+        styles: [],
+      };
+      const http = { baseUrl: "/api/v1" };
+      const adapters = {
+        storageAdapter: new HttpStorageAdapter(http),
+        contentProviders: [new HttpContentProviderAdapter(http)],
+        assetAdapter: new HttpAssetAdapter(http),
+        blockLibraryAdapter: {
+          capabilities: { supported: ["list", "readVersion"] },
+          list: async () => ({
+            items: structuredClone(definitions),
+            nextCursor: null,
+          }),
+          getVersion: async (ref) => {
+            const found = definitions.find(
+              (d) => d.ref.id === ref.id && d.ref.version === ref.version,
+            );
+            if (!found) throw Error("Bileşen bulunamadı");
+            return structuredClone(found);
+          },
+        },
+      };
+      const savedId = new URL(location.href).searchParams.get("document");
+      if (savedId)
+        Object.assign(doc, await adapters.storageAdapter.load(savedId));
+      const editor = mountEditor("#editor", {
+        ...adapters,
+        initialDocument: doc,
+        appearance: "embedded",
+        showToolbar: false,
+        mode: "content",
+        permissions: {
+          design: true,
+          save: true,
+          import: true,
+          export: true,
+          catalogWrite: false,
+        },
+        theme: {
+          surface: "#fff",
+          text: "#243048",
+          muted: "#526481",
+          accent: "#324e7b",
+          border: "#d7dfe9",
+          fontFamily: "system-ui",
+        },
+        onError: (error) => {
+          document.querySelector("#status").textContent = error.message;
+        },
+      });
+      await editor.ready;
+      document.querySelector("#status").textContent =
+        "Sayfa JSON’dan açıldı. Kaydetme ve görünüm bu CMS kabuğuna ait.";
+      let preview = false;
+      document.querySelector("#preview").onclick = async () => {
+        preview = !preview;
+        await editor.setPreview(preview);
+        document.querySelector("#preview").textContent = preview
+          ? "Düzenlemeye dön"
+          : "Önizle";
+      };
+      document.querySelector("#design").onclick = () =>
+        editor.setMode("designer");
+      document.querySelector("#content").onclick = () =>
+        editor.setMode("content");
+      document.querySelector("#save").onclick = async () => {
+        try {
+          const saved = await editor.save();
+          const url = new URL(location.href);
+          url.searchParams.set("document", saved.documentId);
+          history.replaceState(null, "", url);
+          document.querySelector("#status").textContent =
+            `Kaydedildi · rev ${saved.revision}`;
+        } catch (error) {
+          document.querySelector("#status").textContent = error.message;
+        }
+      };
+      document.querySelector("#json").onclick = async () => {
+        const pre = document.querySelector("#document");
+        pre.hidden = false;
+        pre.textContent = JSON.stringify(await editor.getDocument(), null, 2);
+      };
+      document.querySelector("#publish").onclick = async () => {
+        try {
+          const result = await renderPageDocument(
+            await editor.getDocument(),
+            adapters,
+          );
+          const pre = document.querySelector("#bundle");
+          pre.hidden = false;
+          pre.textContent = JSON.stringify(result, null, 2);
+          document.querySelector("#status").textContent =
+            `Yayın çıktısı üretildi · ${result.issues.length} rapor`;
+        } catch (error) {
+          document.querySelector("#status").textContent = error.message;
+        }
+      };
+      window.addEventListener("pagehide", () => editor.destroy(), {
+        once: true,
+      });
+    </script>
+  </body>
+</html>

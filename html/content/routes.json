@@ -1,0 +1,132 @@
+[
+  {
+    "en": "/en/about/",
+    "tr": "/tr/hakkimizda/",
+    "es": "/es/nosotros/"
+  },
+  {
+    "en": "/en/contact/",
+    "tr": "/tr/iletisim/",
+    "es": "/es/contacto/"
+  },
+  {
+    "en": "/en/destinations/didim/",
+    "tr": "/tr/destinasyonlar/didim/",
+    "es": "/es/destinos/didim/"
+  },
+  {
+    "en": "/en/destinations/ephesus/",
+    "tr": "/tr/destinasyonlar/efes/",
+    "es": "/es/destinos/efeso/"
+  },
+  {
+    "en": "/en/destinations/",
+    "tr": "/tr/destinasyonlar/",
+    "es": "/es/destinos/"
+  },
+  {
+    "en": "/en/destinations/kusadasi/",
+    "tr": "/tr/destinasyonlar/kusadasi/",
+    "es": "/es/destinos/kusadasi/"
+  },
+  {
+    "en": "/en/destinations/miletus/",
+    "tr": "/tr/destinasyonlar/milet/",
+    "es": "/es/destinos/mileto/"
+  },
+  {
+    "en": "/en/destinations/pamukkale/",
+    "tr": "/tr/destinasyonlar/pamukkale/",
+    "es": "/es/destinos/pamukkale/"
+  },
+  {
+    "en": "/en/destinations/priene/",
+    "tr": "/tr/destinasyonlar/priene/",
+    "es": "/es/destinos/priene/"
+  },
+  {
+    "en": "/en/destinations/selcuk/",
+    "tr": "/tr/destinasyonlar/selcuk/",
+    "es": "/es/destinos/selcuk/"
+  },
+  {
+    "en": "/en/destinations/sirince/",
+    "tr": "/tr/destinasyonlar/sirince/",
+    "es": "/es/destinos/sirince/"
+  },
+  {
+    "en": "/en/",
+    "tr": "/tr/",
+    "es": "/es/"
+  },
+  {
+    "en": "/en/shore-excursions/",
+    "tr": "/tr/liman-turlari/",
+    "es": "/es/excursiones-de-crucero/"
+  },
+  {
+    "en": "/en/tailor-made/",
+    "tr": "/tr/kisiye-ozel/",
+    "es": "/es/viajes-a-medida/"
+  },
+  {
+    "en": "/en/tours/ephesus-private-tour/",
+    "tr": "/tr/turlar/efes-ozel-turu/",
+    "es": "/es/tours/tour-privado-efeso/"
+  },
+  {
+    "en": "/en/tours/",
+    "tr": "/tr/turlar/",
+    "es": "/es/tours/"
+  },
+  {
+    "en": "/en/transfers/",
+    "tr": "/tr/transferler/",
+    "es": "/es/traslados/"
+  },
+  {
+    "tr": "/tr/rehber/",
+    "en": "/en/guides/",
+    "es": "/es/guias/"
+  },
+  {
+    "tr": "/tr/rehber/kusadasinda-bir-gun/",
+    "en": "/en/guides/one-day-in-kusadasi/",
+    "es": "/es/guias/un-dia-en-kusadasi/"
+  },
+  {
+    "tr": "/tr/rehber/efes-gezisine-hazirlik/",
+    "en": "/en/guides/prepare-for-ephesus/",
+    "es": "/es/guias/preparar-visita-efeso/"
+  },
+  {
+    "tr": "/tr/rehber/kusadasi-kruvaziyer-turu-planlama/",
+    "en": "/en/guides/kusadasi-cruise-day-planning/",
+    "es": "/es/guias/planificar-escala-kusadasi/"
+  },
+  {
+    "tr": "/tr/acente-ve-belgeler/",
+    "en": "/en/agency-credentials/",
+    "es": "/es/agencia-y-documentos/"
+  },
+  {
+    "tr": "/tr/kvkk-aydinlatma/",
+    "en": "/en/privacy-notice/",
+    "es": "/es/aviso-de-privacidad/"
+  },
+  {
+    "tr": "/tr/cerez-politikasi/",
+    "en": "/en/cookie-policy/",
+    "es": "/es/politica-de-cookies/"
+  },
+  {
+    "tr": "/tr/kullanim-kosullari/",
+    "en": "/en/terms/",
+    "es": "/es/condiciones/"
+  },
+  {
+    "tr": "/tr/erisilebilirlik/",
+    "en": "/en/accessibility/",
+    "es": "/es/accesibilidad/"
+  }
+]

@@ -1,0 +1,759 @@
+openapi: 3.1.0
+info:
+  title: BlockDesign Reference API
+  version: 0.1.0
+  description: Reference HTTP adapter for the independent BlockDesign editor.
+servers:
+  - url: http://127.0.0.1:8080/api/v1
+paths:
+  /design-systems/{id}/versions/{version}/assets:
+    parameters:
+      - { in: path, name: id, required: true, schema: { type: string } }
+      - { in: path, name: version, required: true, schema: { type: string } }
+    get:
+      operationId: getDesignSystemAssetManifest
+      responses:
+        "200":
+          description: Stored design-system CSS and stylesheet manifest
+          headers: { ETag: { schema: { type: string } } }
+          content:
+            application/json:
+              {
+                schema:
+                  { $ref: "#/components/schemas/DesignSystemAssetManifest" },
+              }
+        "404": { $ref: "#/components/responses/ApiError" }
+    put:
+      operationId: saveDesignSystemAssetManifest
+      parameters:
+        - {
+            in: header,
+            name: If-Match,
+            required: false,
+            schema: { type: string },
+            description: Required for updates; quoted current revision.,
+          }
+        - {
+            in: header,
+            name: If-None-Match,
+            required: false,
+            schema: { type: string, const: "*" },
+            description: Required for first save.,
+          }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            {
+              schema:
+                { $ref: "#/components/schemas/DesignSystemAssetManifestInput" },
+            }
+      responses:
+        "200":
+          description: Saved with the next revision
+          headers: { ETag: { schema: { type: string } } }
+          content:
+            application/json:
+              {
+                schema:
+                  {
+                    type: object,
+                    required: [revision],
+                    properties: { revision: { type: string } },
+                  },
+              }
+        "409": { $ref: "#/components/responses/ApiError" }
+        "412": { $ref: "#/components/responses/ApiError" }
+  /capabilities:
+    get:
+      operationId: getCapabilities
+      responses:
+        "200": { description: Available reference API capabilities }
+  /assets:
+    get:
+      operationId: searchAssets
+      parameters:
+        - {
+            name: q,
+            in: query,
+            required: false,
+            schema: { type: string, maxLength: 200 },
+          }
+      responses:
+        "200":
+          description: Image metadata matching the query
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [items, nextCursor]
+                properties:
+                  items:
+                    {
+                      type: array,
+                      items: { $ref: "#/components/schemas/AssetRecord" },
+                    }
+                  nextCursor: { type: [string, "null"] }
+    post:
+      operationId: uploadImageAsset
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required: [file]
+              properties:
+                file:
+                  {
+                    type: string,
+                    format: binary,
+                    description: JPEG,
+                    PNG,
+                    or GIF; maximum 8 MiB and 40 megapixels.,
+                  }
+                alt: { type: string, maxLength: 500 }
+      responses:
+        "201":
+          description: Image and metadata stored
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/AssetRecord" }
+        "400": { $ref: "#/components/responses/ApiError" }
+        "413": { $ref: "#/components/responses/ApiError" }
+  /assets/{id}:
+    parameters:
+      - { name: id, in: path, required: true, schema: { type: string } }
+    get:
+      operationId: resolveAsset
+      responses:
+        "200":
+          description: Stable asset descriptor
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/AssetRecord" }
+        "404": { $ref: "#/components/responses/ApiError" }
+  /assets/{id}/content:
+    parameters:
+      - { name: id, in: path, required: true, schema: { type: string } }
+    get:
+      operationId: getAssetContent
+      responses:
+        "200":
+          description: Immutable image bytes with sniffing disabled
+          headers:
+            Cache-Control: { schema: { type: string } }
+            X-Content-Type-Options: { schema: { type: string, const: nosniff } }
+          content:
+            image/jpeg: { schema: { type: string, format: binary } }
+            image/png: { schema: { type: string, format: binary } }
+            image/gif: { schema: { type: string, format: binary } }
+        "404": { $ref: "#/components/responses/ApiError" }
+  /documents:
+    get:
+      operationId: listDocuments
+      summary: List saved documents in one design system, up to 100 per page
+      parameters:
+        - { in: query, name: systemId, required: true, schema: { type: string } }
+        - { in: query, name: systemVersion, required: true, schema: { type: string } }
+        - { in: query, name: cursor, required: false, schema: { type: string } }
+      responses:
+        "200":
+          description: Matching documents and nextCursor, null at the end
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [items, nextCursor]
+                properties:
+                  items: { type: array, items: { $ref: "#/components/schemas/EditorDocument" } }
+                  nextCursor: { type: [string, "null"] }
+        "400": { $ref: "#/components/responses/ApiError" }
+    post:
+      operationId: createDocument
+      summary: Create a versioned editor document
+      requestBody:
+        required: true
+        content:
+          application/json:
+            { schema: { $ref: "#/components/schemas/EditorDocument" } }
+      responses:
+        "201":
+          description: Created
+          headers:
+            ETag: { schema: { type: string } }
+          content:
+            application/json:
+              { schema: { $ref: "#/components/schemas/SaveResult" } }
+        "400": { $ref: "#/components/responses/ApiError" }
+  /documents/{id}:
+    parameters:
+      - { name: id, in: path, required: true, schema: { type: string } }
+    get:
+      operationId: getDocument
+      responses:
+        "200":
+          description: Versioned editor document
+          headers:
+            ETag: { schema: { type: string } }
+          content:
+            application/json:
+              { schema: { $ref: "#/components/schemas/EditorDocument" } }
+        "404": { $ref: "#/components/responses/ApiError" }
+    put:
+      operationId: updateDocument
+      parameters:
+        - {
+            name: If-Match,
+            in: header,
+            required: true,
+            schema: { type: string },
+            description: Expected numeric revision returned by the previous save,
+          }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            { schema: { $ref: "#/components/schemas/EditorDocument" } }
+      responses:
+        "200": { description: Saved; revision is incremented }
+        "412": { $ref: "#/components/responses/ApiError" }
+        "428": { $ref: "#/components/responses/ApiError" }
+  /blocks:
+    get:
+      operationId: listBlocks
+      parameters:
+        - {
+            name: systemId,
+            in: query,
+            required: true,
+            schema: { type: string },
+          }
+        - {
+            name: systemVersion,
+            in: query,
+            required: true,
+            schema: { type: string },
+          }
+        - { name: q, in: query, schema: { type: string } }
+        - {
+            name: includeArchived,
+            in: query,
+            schema: { type: boolean, default: false },
+          }
+      responses:
+        "200": { description: Block versions for a design system }
+    post:
+      operationId: createBlockVersion
+      requestBody:
+        required: true
+        content:
+          application/json:
+            { schema: { $ref: "#/components/schemas/BlockDefinitionVersion" } }
+      responses:
+        "201": { description: Version reference created }
+        "409": { $ref: "#/components/responses/ApiError" }
+  /blocks/{id}/versions/{version}:
+    parameters:
+      - { name: id, in: path, required: true, schema: { type: string } }
+      - { name: version, in: path, required: true, schema: { type: string } }
+    get:
+      operationId: getBlockVersion
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: string } }
+        - { name: version, in: path, required: true, schema: { type: string } }
+      responses:
+        "200": { description: Immutable block definition version }
+        "404": { $ref: "#/components/responses/ApiError" }
+    patch:
+      operationId: archiveBlockVersion
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: string } }
+        - { name: version, in: path, required: true, schema: { type: string } }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [archived]
+              properties:
+                archived: { type: boolean }
+      responses:
+        "200":
+          {
+            description: Archive metadata was updated; immutable component/version content was retained,
+          }
+        "404": { $ref: "#/components/responses/ApiError" }
+    delete:
+      operationId: deleteUnusedBlockVersion
+      summary: Permanently delete a version only when no document or template references it
+      responses:
+        "204": { description: Deleted }
+        "404": { $ref: "#/components/responses/ApiError" }
+        "409": { $ref: "#/components/responses/ApiError" }
+  /templates:
+    get:
+      operationId: listTemplates
+      parameters:
+        - {
+            name: systemId,
+            in: query,
+            required: true,
+            schema: { type: string },
+          }
+        - {
+            name: systemVersion,
+            in: query,
+            required: true,
+            schema: { type: string },
+          }
+        - {
+            name: includeArchived,
+            in: query,
+            schema: { type: boolean, default: false },
+          }
+      responses:
+        { "200": { description: Page-template versions for a design system } }
+    post:
+      operationId: createTemplateVersion
+      requestBody:
+        required: true
+        content:
+          {
+            application/json:
+              {
+                schema: { $ref: "#/components/schemas/PageTemplateDefinition" },
+              },
+          }
+      responses:
+        "201": { description: Version reference created }
+        "409": { $ref: "#/components/responses/ApiError" }
+  /templates/{id}/versions/{version}:
+    parameters:
+      - { name: id, in: path, required: true, schema: { type: string } }
+      - { name: version, in: path, required: true, schema: { type: string } }
+    get:
+      operationId: getTemplateVersion
+      responses:
+        "200": { description: Page-template version }
+        "404": { $ref: "#/components/responses/ApiError" }
+    patch:
+      operationId: archiveTemplateVersion
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              {
+                type: object,
+                required: [archived],
+                properties: { archived: { type: boolean } },
+              }
+      responses:
+        "200": { description: Archive metadata updated }
+        "404": { $ref: "#/components/responses/ApiError" }
+  /shared-regions:
+    get:
+      operationId: listSharedRegions
+      parameters:
+        - {
+            name: systemId,
+            in: query,
+            required: true,
+            schema: { type: string },
+          }
+        - {
+            name: systemVersion,
+            in: query,
+            required: true,
+            schema: { type: string },
+          }
+        - {
+            name: includeArchived,
+            in: query,
+            schema: { type: boolean, default: false },
+          }
+      responses:
+        { "200": { description: Shared-region versions for a design system } }
+    post:
+      operationId: createSharedRegionVersion
+      requestBody:
+        required: true
+        content:
+          {
+            application/json:
+              {
+                schema: { $ref: "#/components/schemas/SharedRegionDefinition" },
+              },
+          }
+      responses:
+        "201": { description: Version reference created }
+        "409": { $ref: "#/components/responses/ApiError" }
+  /shared-regions/{id}/versions/{version}:
+    parameters:
+      - { name: id, in: path, required: true, schema: { type: string } }
+      - { name: version, in: path, required: true, schema: { type: string } }
+    get:
+      operationId: getSharedRegionVersion
+      responses:
+        "200": { description: Shared-region version }
+        "404": { $ref: "#/components/responses/ApiError" }
+    patch:
+      operationId: archiveSharedRegionVersion
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              {
+                type: object,
+                required: [archived],
+                properties: { archived: { type: boolean } },
+              }
+      responses:
+        "200": { description: Archive metadata updated }
+        "404": { $ref: "#/components/responses/ApiError" }
+  /content/collections:
+    get:
+      operationId: listDemoContentCollections
+      responses:
+        "200": { description: Read-only demo collection schemas }
+  /content/collections/{id}:
+    get:
+      operationId: getDemoContentCollection
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: string } }
+        - { name: locale, in: query, schema: { type: string, description: BCP 47 content locale } }
+        - { name: fallbackLocale, in: query, schema: { type: string, description: Explicit content fallback locale } }
+      responses:
+        "200":
+          {
+            description: Collection field schema and supported query capabilities,
+          }
+        "404": { $ref: "#/components/responses/ApiError" }
+  /content/collections/{id}/records:
+    get:
+      operationId: searchDemoContentRecords
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: string } }
+        - { name: q, in: query, schema: { type: string } }
+        - { name: cursor, in: query, schema: { type: string } }
+        - { name: locale, in: query, schema: { type: string, description: BCP 47 content locale } }
+        - { name: fallbackLocale, in: query, schema: { type: string, description: Explicit content fallback locale } }
+      responses:
+        "200": { description: Search results in provider PageResult shape with localeResolution metadata }
+  /content/collections/{id}/groups:
+    get:
+      operationId: listDemoContentGroups
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: string } }
+        - { name: locale, in: query, schema: { type: string } }
+        - { name: fallbackLocale, in: query, schema: { type: string } }
+      responses:
+        "200":
+          {
+            description: Ordered,
+            read-only record groups available in the collection,
+          }
+        "404": { $ref: "#/components/responses/ApiError" }
+  /content/collections/{id}/groups/{groupId}/records:
+    get:
+      operationId: resolveDemoContentGroup
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: string } }
+        - { name: groupId, in: path, required: true, schema: { type: string } }
+        - { name: locale, in: query, schema: { type: string } }
+        - { name: fallbackLocale, in: query, schema: { type: string } }
+      responses:
+        "200": { description: Ordered read-only records in the selected group }
+        "404": { $ref: "#/components/responses/ApiError" }
+  /content/collections/{id}/resolve:
+    post:
+      operationId: resolveDemoContentRecords
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: string } }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            {
+              schema:
+                {
+                  type: object,
+                  required: [recordRefs],
+                  properties:
+                    {
+                      recordRefs: { type: array, items: { type: string } },
+                      contentLocale:
+                        {
+                          type: object,
+                          required: [locale, fallback],
+                          properties:
+                            {
+                              locale: { type: string },
+                              fallback:
+                                {
+                                  oneOf:
+                                    [
+                                      { type: object, required: [mode], properties: { mode: { const: none } } },
+                                      { type: object, required: [mode, locale], properties: { mode: { const: locale }, locale: { type: string } } },
+                                    ],
+                                },
+                            },
+                        },
+                    },
+                },
+            }
+      responses:
+        "200":
+          {
+            description: Ordered read-only record resolutions,
+            including missing record entries,
+          }
+  /content/collections/{id}/query:
+    post:
+      operationId: queryDemoContentRecords
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: string } }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            {
+              schema:
+                {
+                  type: object,
+                  properties:
+                    {
+                      filters: { type: array },
+                      sort: { oneOf: [{ type: object }, { type: "null" }] },
+                      limit:
+                        { type: [integer, "null"], minimum: 1, maximum: 50 },
+                      contentLocale: { $ref: "#/components/schemas/ContentLocaleContext" },
+                    },
+                },
+            }
+      responses:
+        "200": { description: Capability-limited query result }
+        "400": { $ref: "#/components/responses/ApiError" }
+  /healthz:
+    get:
+      operationId: healthcheck
+      responses:
+        "200": { description: Server is ready }
+components:
+  schemas:
+    ContentLocaleContext:
+      type: object
+      required: [locale, fallback]
+      properties:
+        locale: { type: string, description: BCP 47 content locale }
+        fallback:
+          oneOf:
+            - { type: object, required: [mode], properties: { mode: { const: none } } }
+            - { type: object, required: [mode, locale], properties: { mode: { const: locale }, locale: { type: string } } }
+  responses:
+    ApiError:
+      description: Normalized adapter error
+      content:
+        application/json:
+          schema:
+            type: object
+            required: [error]
+            properties:
+              error: { $ref: "#/components/schemas/AdapterError" }
+  schemas:
+    EditorDocument:
+      type: object
+      required:
+        [
+          documentVersion,
+          documentKind,
+          engine,
+          engineVersion,
+          revision,
+          designSystemRef,
+          templateRef,
+          sharedRegionRefs,
+          blocks,
+          projectData,
+          editorState,
+        ]
+      properties:
+        documentVersion: { type: integer }
+        documentId: { type: string }
+        documentKind: { enum: [page, blockDraft] }
+        engine: { const: grapesjs }
+        engineVersion: { type: string }
+        revision: { type: [string, "null"] }
+        designSystemRef: { $ref: "#/components/schemas/VersionRef" }
+        templateRef:
+          {
+            oneOf:
+              [{ $ref: "#/components/schemas/VersionRef" }, { type: "null" }],
+          }
+        sharedRegionRefs:
+          { type: array, items: { $ref: "#/components/schemas/VersionRef" } }
+        blocks:
+          { type: array, items: { $ref: "#/components/schemas/BlockInstance" } }
+        projectData: { type: object, additionalProperties: true }
+        editorState: { type: object, additionalProperties: true }
+    VersionRef:
+      type: object
+      required: [id, version]
+      properties:
+        id: { type: string }
+        version: { type: string }
+    PageTemplateDefinition:
+      type: object
+      required:
+        [
+          ref,
+          designSystemRef,
+          name,
+          description,
+          layout,
+          contentSlotId,
+          sharedRegionRefs,
+          allowedBlockCategories,
+          mandatoryBlockIds,
+          archived,
+        ]
+      properties:
+        ref: { $ref: "#/components/schemas/VersionRef" }
+        designSystemRef: { $ref: "#/components/schemas/VersionRef" }
+        layout: { type: object, additionalProperties: true }
+        contentSlotId: { type: string }
+        sharedRegionRefs:
+          { type: array, items: { $ref: "#/components/schemas/VersionRef" } }
+        allowedBlockCategories: { type: array, items: { type: string } }
+        mandatoryBlockIds: { type: array, items: { type: string } }
+        archived: { type: boolean }
+    SharedRegionDefinition:
+      type: object
+      required:
+        [
+          ref,
+          designSystemRef,
+          name,
+          region,
+          componentTemplate,
+          fields,
+          archived,
+        ]
+      properties:
+        ref: { $ref: "#/components/schemas/VersionRef" }
+        designSystemRef: { $ref: "#/components/schemas/VersionRef" }
+        region: { type: string, enum: [header, footer, custom] }
+        componentTemplate: { type: object, additionalProperties: true }
+        fields:
+          { type: array, items: { type: object, additionalProperties: true } }
+        archived: { type: boolean }
+    DesignSystemAssetManifestInput:
+      type: object
+      required: [ref, name, commonCss, stylesheets]
+      properties:
+        ref: { $ref: "#/components/schemas/VersionRef" }
+        name: { type: string, minLength: 1, maxLength: 160 }
+        commonCss: { type: string, maxLength: 1048576 }
+        stylesheets:
+          type: array
+          maxItems: 100
+          items: { type: string, minLength: 1 }
+    DesignSystemAssetManifest:
+      allOf:
+        - { $ref: "#/components/schemas/DesignSystemAssetManifestInput" }
+        - type: object
+          required: [revision]
+          properties:
+            revision: { type: string }
+    AssetRecord:
+      type: object
+      required: [assetId, url, mimeType, alt, width, height]
+      properties:
+        assetId: { type: string }
+        url: { type: string }
+        mimeType: { type: string, enum: [image/jpeg, image/png, image/gif] }
+        alt: { type: string, maxLength: 500 }
+        width: { type: integer, minimum: 1 }
+        height: { type: integer, minimum: 1 }
+    BlockDefinitionVersion:
+      type: object
+      required:
+        [
+          ref,
+          designSystemRef,
+          name,
+          description,
+          category,
+          preview,
+          componentTemplate,
+          fields,
+          repeaters,
+          defaultData,
+          stylePolicy,
+          sourceCapabilities,
+          archived,
+        ]
+      properties:
+        ref: { $ref: "#/components/schemas/VersionRef" }
+        designSystemRef: { $ref: "#/components/schemas/VersionRef" }
+        name: { type: string }
+        description: { type: string }
+        category: { type: string }
+        preview: { type: string }
+        componentTemplate: { type: object, additionalProperties: true }
+        fields:
+          { type: array, items: { type: object, additionalProperties: true } }
+        repeaters:
+          { type: array, items: { type: object, additionalProperties: true } }
+        defaultData: { type: object, additionalProperties: true }
+        stylePolicy: { type: object, additionalProperties: true }
+        sourceCapabilities: { $ref: "#/components/schemas/SourceCapabilities" }
+        archived: { type: boolean }
+    SourceCapabilities:
+      type: object
+      required: [modes, target]
+      properties:
+        modes:
+          type: array
+          items: { type: string, enum: [manual, selection, query] }
+        target:
+          oneOf:
+            - { type: string, enum: [block, field, repeater] }
+            - type: array
+              items: { type: string, enum: [block, field, repeater] }
+    BlockInstance:
+      type: object
+      required:
+        [
+          instanceId,
+          definitionRef,
+          variant,
+          manualData,
+          sourceBindings,
+          styleOverrides,
+        ]
+      properties:
+        instanceId: { type: string }
+        definitionRef: { $ref: "#/components/schemas/VersionRef" }
+        variant: { type: [string, "null"] }
+        manualData: { type: object, additionalProperties: true }
+        sourceBindings: { type: array, items: { type: object } }
+        styleOverrides: { type: object, additionalProperties: true }
+    SaveResult:
+      type: object
+      required: [documentId, revision, savedAt]
+      properties:
+        documentId: { type: string }
+        revision: { type: string }
+        savedAt: { type: string, format: date-time }
+    AdapterError:
+      type: object
+      required: [code, message, recoverable]
+      properties:
+        code: { type: string }
+        message: { type: string }
+        path: { type: string }
+        recoverable: { type: boolean }

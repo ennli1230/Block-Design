@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="tr">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CMS formu · Bağımsız ESM örneği</title>
+<style>body{margin:0;background:#f7f8f5;color:#27362e;font:16px/1.5 system-ui,sans-serif}main{max-width:680px;margin:40px auto;padding:24px}h1{font-size:28px}label{display:grid;gap:8px}select,button{padding:10px;font:inherit}#form{padding:24px;background:white;border:1px solid #d9e0d9;margin-block:24px}#export-result{overflow-wrap:anywhere}iframe{display:none}button{cursor:pointer}button:focus-visible,select:focus-visible{outline:2px solid #416f5d;outline-offset:3px}</style></head>
+<body><main><h1>CMS’den üretilen form</h1><p>Üretim ESM paketiyle çalışan bağımsız örnek. Yerel örnek şemalar kullanılır; bilgiler gönderilmez.</p>
+<label>Form tanımı<select id="choice"><option value="contact">İletişim</option><option value="travel">Seyahat talebi</option></select></label><div id="form"></div>
+<button id="test" type="button">Üretim export testini çalıştır</button><p id="export-result" role="status"></p></main>
+<script type="module">
+import {mountCmsForm,validateFormDefinition,validateFormValues,prepareCmsFormExport,CMS_FORM_CSS} from '../../dist/esm/blockdesign-forms.js';
+const style=document.createElement('style');style.textContent=CMS_FORM_CSS;document.head.append(style);
+const contact={ref:{id:'contact',version:'1.0.0'},label:'İletişim',locale:'tr',fields:[{fieldId:'name',type:'text',label:'Adınız soyadınız',validation:{required:true}},{fieldId:'email',type:'email',label:'E-posta',validation:{required:true}},{fieldId:'message',type:'textarea',label:'Mesaj',validation:{required:true}}],action:{adapterId:'example',actionId:'contact',kind:'submit',label:'Gönder'}};
+const travel={...structuredClone(contact),ref:{id:'travel',version:'1.0.0'},label:'Seyahat talebi',fields:[...contact.fields.slice(0,2),{fieldId:'destination',type:'select',label:'Destinasyon',options:[{value:'efes',label:'Efes'},{value:'kusadasi',label:'Kuşadası'}],validation:{required:true}},contact.fields[2]]};
+const provider={providerId:'example',capabilities:{supported:['readSchema','listForms']},getDefinition:async ref=>structuredClone(ref.id==='contact'?contact:travel)};
+const root=document.querySelector('#form');root.setAttribute('data-bd-cms-form','true');let stop;
+function show(){stop?.();root.setAttribute('data-bd-form-binding',JSON.stringify({providerId:'example',formRef:{id:document.querySelector('#choice').value,version:'1.0.0'},appearance:'stacked',contextBindings:[]}));stop=mountCmsForm(root,{mode:'preview',definition:binding=>provider.getDefinition(binding.formRef),validateDefinition:validateFormDefinition,validateValues:validateFormValues,options:async()=>({items:[],nextCursor:null}),execute:async()=>{throw new Error('Bu örnek gerçek gönderim yapmaz.');}});}
+document.querySelector('#choice').addEventListener('change',show);show();
+document.querySelector('#test').addEventListener('click',async()=>{
+  const status=document.querySelector('#export-result');status.textContent='Üretim paketinin bağımsız export runtimeı sınanıyor…';
+  try{
+    const exported=await prepareCmsFormExport(root.outerHTML,{providers:[provider]});
+    const frame=document.createElement('iframe');document.body.append(frame);
+    frame.srcdoc='<!doctype html><html><body>'+exported.html+'<script>'+exported.js+'<'+'/script></body></html>';
+    const deadline=Date.now()+5000;while(!frame.contentDocument?.querySelector('input')){if(Date.now()>deadline)throw new Error('Export runtimeı açılmadı.');await new Promise(resolve=>setTimeout(resolve,10));}
+    if(!frame.contentDocument.querySelector('[type=submit]').disabled)throw new Error('Eksik yayın bağlantısı gönderimi engellemedi.');
+    status.textContent='GEÇTİ: Üretim ESM paketinden üretilen bağımsız export formu çalıştı; yapılandırılmamış gönderim kapalı.';frame.remove();
+  }catch(error){status.textContent='BAŞARISIZ: '+error.message;}
+});
+</script></body></html>

@@ -1,0 +1,59 @@
+{
+  "destinations": [
+    {
+      "recordId": "kusadasi",
+      "collectionId": "destinations",
+      "values": {
+        "label": "Kuşadası"
+      }
+    },
+    {
+      "recordId": "efes",
+      "collectionId": "destinations",
+      "values": {
+        "label": "Efes"
+      }
+    },
+    {
+      "recordId": "pamukkale",
+      "collectionId": "destinations",
+      "values": {
+        "label": "Pamukkale"
+      }
+    }
+  ],
+  "tours": [
+    {
+      "recordId": "kusadasi-walk",
+      "collectionId": "tours",
+      "values": {
+        "label": "Kuşadası yürüyüş turu",
+        "destinationId": "kusadasi"
+      }
+    },
+    {
+      "recordId": "efes-private",
+      "collectionId": "tours",
+      "values": {
+        "label": "Efes özel turu",
+        "destinationId": "efes"
+      }
+    },
+    {
+      "recordId": "efes-shore",
+      "collectionId": "tours",
+      "values": {
+        "label": "Efes liman turu",
+        "destinationId": "efes"
+      }
+    },
+    {
+      "recordId": "pamukkale-private",
+      "collectionId": "tours",
+      "values": {
+        "label": "Pamukkale özel turu",
+        "destinationId": "pamukkale"
+      }
+    }
+  ]
+}

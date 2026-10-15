@@ -1,0 +1,134 @@
+{
+  "ref": {
+    "id": "travel",
+    "version": "1.1.0"
+  },
+  "label": "Kişiye özel seyahat",
+  "locale": "tr",
+  "fields": [
+    {
+      "fieldId": "accommodation",
+      "label": "Nerede kalıyorsunuz?",
+      "type": "text",
+      "validation": {
+        "required": true,
+        "maxLength": 200
+      },
+      "placeholder": "Otel veya konaklama bölgesi"
+    },
+    {
+      "fieldId": "travel-dates",
+      "label": "Seyahat tarihleri",
+      "type": "text",
+      "validation": {
+        "required": true,
+        "maxLength": 120
+      },
+      "placeholder": "Örn. 18–22 Haziran"
+    },
+    {
+      "fieldId": "guests",
+      "label": "Kişi sayısı",
+      "type": "number",
+      "validation": {
+        "required": true,
+        "min": 1,
+        "max": 20
+      },
+      "defaultValue": 2
+    },
+    {
+      "fieldId": "pace",
+      "label": "Tercih edilen tempo",
+      "type": "select",
+      "validation": {
+        "required": true
+      },
+      "options": [
+        {
+          "value": "relaxed",
+          "label": "Rahat"
+        },
+        {
+          "value": "balanced",
+          "label": "Dengeli"
+        },
+        {
+          "value": "active",
+          "label": "Aktif"
+        }
+      ]
+    },
+    {
+      "fieldId": "interest-history",
+      "label": "Tarih ve arkeoloji",
+      "type": "checkbox",
+      "validation": {
+        "required": false
+      }
+    },
+    {
+      "fieldId": "interest-food",
+      "label": "Yeme içme ve şarap",
+      "type": "checkbox",
+      "validation": {
+        "required": false
+      }
+    },
+    {
+      "fieldId": "interest-nature",
+      "label": "Doğa ve plajlar",
+      "type": "checkbox",
+      "validation": {
+        "required": false
+      }
+    },
+    {
+      "fieldId": "interest-local",
+      "label": "Yerel deneyimler",
+      "type": "checkbox",
+      "validation": {
+        "required": false
+      }
+    },
+    {
+      "fieldId": "message",
+      "label": "Seyahatinizi anlatın",
+      "type": "textarea",
+      "validation": {
+        "required": true,
+        "maxLength": 3000
+      },
+      "layout": {
+        "span": 2
+      }
+    },
+    {
+      "fieldId": "full-name",
+      "label": "Adınız soyadınız",
+      "type": "text",
+      "validation": {
+        "required": true,
+        "maxLength": 120
+      }
+    },
+    {
+      "fieldId": "email",
+      "label": "E-posta adresiniz",
+      "type": "email",
+      "validation": {
+        "required": true,
+        "maxLength": 200
+      }
+    }
+  ],
+  "layout": {
+    "columns": 2
+  },
+  "action": {
+    "adapterId": "demo-cms",
+    "actionId": "travel",
+    "kind": "submit",
+    "label": "Seyahat talebi oluştur"
+  }
+}

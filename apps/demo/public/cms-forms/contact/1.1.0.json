@@ -1,0 +1,66 @@
+{
+  "ref": {
+    "id": "contact",
+    "version": "1.1.0"
+  },
+  "label": "İletişim",
+  "locale": "tr",
+  "fields": [
+    {
+      "fieldId": "full-name",
+      "label": "Adınız soyadınız",
+      "type": "text",
+      "validation": {
+        "required": true,
+        "maxLength": 120
+      }
+    },
+    {
+      "fieldId": "email",
+      "label": "E-posta adresiniz",
+      "type": "email",
+      "validation": {
+        "required": true,
+        "maxLength": 200
+      }
+    },
+    {
+      "fieldId": "phone",
+      "label": "Telefon / WhatsApp",
+      "type": "tel",
+      "validation": {
+        "required": false,
+        "maxLength": 40
+      }
+    },
+    {
+      "fieldId": "travel-date",
+      "label": "Seyahat tarihi (isteğe bağlı)",
+      "type": "date",
+      "validation": {
+        "required": false
+      }
+    },
+    {
+      "fieldId": "message",
+      "label": "Mesajınız",
+      "type": "textarea",
+      "validation": {
+        "required": true,
+        "maxLength": 3000
+      },
+      "layout": {
+        "span": 2
+      }
+    }
+  ],
+  "layout": {
+    "columns": 2
+  },
+  "action": {
+    "adapterId": "demo-cms",
+    "actionId": "contact",
+    "kind": "submit",
+    "label": "Mesaj gönder"
+  }
+}

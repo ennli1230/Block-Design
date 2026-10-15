@@ -1,0 +1,104 @@
+{
+  "ref": {
+    "id": "transfer",
+    "version": "1.1.0"
+  },
+  "label": "Transfer talebi",
+  "locale": "tr",
+  "fields": [
+    {
+      "fieldId": "pickup",
+      "label": "Alış noktası",
+      "type": "select",
+      "validation": {
+        "required": true
+      },
+      "options": [
+        {
+          "value": "izmir-airport",
+          "label": "İzmir Adnan Menderes Havalimanı"
+        },
+        {
+          "value": "kusadasi-port",
+          "label": "Kuşadası Limanı"
+        },
+        {
+          "value": "kusadasi-hotel",
+          "label": "Kuşadası oteli"
+        },
+        {
+          "value": "selcuk-hotel",
+          "label": "Selçuk oteli"
+        }
+      ]
+    },
+    {
+      "fieldId": "dropoff",
+      "label": "Varış noktası",
+      "type": "text",
+      "validation": {
+        "required": true,
+        "maxLength": 200
+      },
+      "placeholder": "Otel adı veya adres"
+    },
+    {
+      "fieldId": "travel-date",
+      "label": "Tercih edilen tarih",
+      "type": "date",
+      "validation": {
+        "required": true
+      }
+    },
+    {
+      "fieldId": "pickup-time",
+      "label": "Alış saati",
+      "type": "text",
+      "validation": {
+        "required": true,
+        "minLength": 5,
+        "maxLength": 5
+      },
+      "placeholder": "Örn. 14:30"
+    },
+    {
+      "fieldId": "guests",
+      "label": "Yolcu sayısı",
+      "type": "number",
+      "validation": {
+        "required": true,
+        "min": 1,
+        "max": 20
+      },
+      "defaultValue": 2
+    },
+    {
+      "fieldId": "email",
+      "label": "E-posta adresiniz",
+      "type": "email",
+      "validation": {
+        "required": true,
+        "maxLength": 200
+      }
+    },
+    {
+      "fieldId": "flight-number",
+      "label": "Uçuş numarası (isteğe bağlı)",
+      "type": "text",
+      "validation": {
+        "required": false,
+        "maxLength": 30
+      },
+      "placeholder": "Örn. TK 2340"
+    }
+  ],
+  "layout": {
+    "columns": 2
+  },
+  "action": {
+    "adapterId": "demo-cms",
+    "actionId": "transfer",
+    "kind": "submit",
+    "label": "Transfer talebi oluştur"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "name": "@blockdesign/core",
+  "version": "0.1.0",
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    },
+    "./catalog": {
+      "types": "./src/catalog.ts",
+      "default": "./src/catalog.ts"
+    },
+    "./sample": {
+      "types": "./src/sample.ts",
+      "default": "./src/sample.ts"
+    },
+    "./history": {
+      "types": "./src/history.ts",
+      "default": "./src/history.ts"
+    },
+    "./templates": {
+      "types": "./src/templates.ts",
+      "default": "./src/templates.ts"
+    }
+  },
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "node --experimental-strip-types --test src/index.test.js src/schema.test.js src/forms.test.js src/cms-navigation.test.js src/collections.test.js src/rich-text.test.js"
+  },
+  "dependencies": {
+    "@blockdesign/contracts": "0.1.0"
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "ref": {
+    "id": "travel",
+    "version": "1.0.0"
+  },
+  "label": "Seyahat talebi",
+  "locale": "tr",
+  "layout": {
+    "columns": 2
+  },
+  "fields": [
+    {
+      "fieldId": "full-name",
+      "type": "text",
+      "label": "Adınız soyadınız",
+      "validation": {
+        "required": true,
+        "maxLength": 120
+      }
+    },
+    {
+      "fieldId": "email",
+      "type": "email",
+      "label": "E-posta adresiniz",
+      "validation": {
+        "required": true,
+        "maxLength": 200
+      }
+    },
+    {
+      "fieldId": "phone",
+      "type": "tel",
+      "label": "Telefonunuz",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "fieldId": "destination",
+      "type": "select",
+      "label": "Destinasyon",
+      "validation": {
+        "required": true
+      },
+      "options": {
+        "providerId": "demo-form-options",
+        "collectionId": "destinations",
+        "labelField": "label",
+        "searchable": true
+      }
+    },
+    {
+      "fieldId": "tour",
+      "type": "select",
+      "label": "Tur",
+      "help": "Önce destinasyonu seçin.",
+      "validation": {
+        "required": true
+      },
+      "options": {
+        "providerId": "demo-form-options",
+        "collectionId": "tours",
+        "labelField": "label",
+        "dependencies": [
+          {
+            "fieldId": "destination",
+            "filterField": "destinationId"
+          }
+        ]
+      }
+    },
+    {
+      "fieldId": "travel-date",
+      "type": "date",
+      "label": "Seyahat tarihi",
+      "validation": {
+        "required": true
+      }
+    },
+    {
+      "fieldId": "guests",
+      "type": "number",
+      "label": "Kişi sayısı",
+      "defaultValue": 2,
+      "validation": {
+        "required": true,
+        "min": 1,
+        "max": 20
+      }
+    },
+    {
+      "fieldId": "message",
+      "type": "textarea",
+      "label": "Mesajınız",
+      "validation": {
+        "required": true,
+        "maxLength": 3000
+      },
+      "layout": {
+        "span": 2
+      }
+    }
+  ],
+  "action": {
+    "adapterId": "demo-cms",
+    "actionId": "travel",
+    "kind": "submit",
+    "label": "Talep gönder"
+  }
+}

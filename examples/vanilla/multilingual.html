@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BlockDesign çoklu dil entegrasyonu</title>
+    <link rel="stylesheet" href="/dist/vanilla/editor.css" />
+    <style>html, body, #editor { width: 100%; height: 100%; margin: 0; }</style>
+  </head>
+  <body>
+    <div id="editor"></div>
+    <script src="/dist/vanilla/blockdesign-editor.iife.js"></script>
+    <script>
+      // The CMS owns page-group relationships and real public URLs.
+      const pageHost = window.blockDesignPageHost;
+      if (!pageHost) throw new Error('window.blockDesignPageHost must be supplied by the host CMS.');
+
+      const http = {
+        baseUrl: '/api/v1',
+        headers: () => ({ 'X-CSRF-TOKEN': window.csrfToken ?? '' }),
+      };
+      const storage = new BlockDesign.HttpStorageAdapter(http);
+      const content = new BlockDesign.HttpContentProviderAdapter({
+        ...http,
+        // Example for a CMS that calls English records en_US.
+        mapLocale: (locale) => ({ tr: 'tr_TR', en: 'en_US' })[locale] ?? locale,
+      });
+
+      const editor = BlockDesign.mountEditor('#editor', {
+        initialDocument: window.initialPageDocument,
+        storageAdapter: storage,
+        contentProviders: [content],
+        localization: {
+          uiLocale: 'tr',
+          defaultLocale: 'tr',
+          locales: [
+            { code: 'tr', label: 'Turkish', nativeLabel: 'Türkçe', direction: 'ltr' },
+            { code: 'en', label: 'English', nativeLabel: 'English', direction: 'ltr' },
+          ],
+          fallback: { mode: 'none' },
+          strictExport: true,
+        },
+        localizationAdapter: {
+          getPageVariants: (pageGroupId, context) => pageHost.getPageVariants(pageGroupId, context),
+        },
+        onLocaleChangeRequested: (locale, variant) => pageHost.loadPageVariant(locale, variant, storage),
+        onCreateLocaleVariant: (locale, source) => pageHost.createPageVariant(locale, source),
+        onError: console.error,
+      });
+      window.addEventListener('pagehide', () => { void editor.destroy(); }, { once: true });
+    </script>
+  </body>
+</html>

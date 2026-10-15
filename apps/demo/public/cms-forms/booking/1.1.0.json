@@ -1,0 +1,90 @@
+{
+  "ref": {
+    "id": "booking",
+    "version": "1.1.0"
+  },
+  "label": "Tur rezervasyonu",
+  "locale": "tr",
+  "fields": [
+    {
+      "fieldId": "destination",
+      "label": "Destinasyon",
+      "type": "select",
+      "validation": {
+        "required": true
+      },
+      "options": {
+        "providerId": "demo-form-options",
+        "collectionId": "destinations",
+        "labelField": "label",
+        "searchable": true
+      }
+    },
+    {
+      "fieldId": "tour",
+      "label": "Tur",
+      "type": "select",
+      "validation": {
+        "required": true
+      },
+      "help": "Önce destinasyonu seçin. Tur listesi seçiminize göre gelir.",
+      "options": {
+        "providerId": "demo-form-options",
+        "collectionId": "tours",
+        "labelField": "label",
+        "dependencies": [
+          {
+            "fieldId": "destination",
+            "filterField": "destinationId"
+          }
+        ]
+      }
+    },
+    {
+      "fieldId": "travel-date",
+      "label": "Tercih edilen tarih",
+      "type": "date",
+      "validation": {
+        "required": true
+      }
+    },
+    {
+      "fieldId": "guests",
+      "label": "Kişi sayısı",
+      "type": "number",
+      "validation": {
+        "required": true,
+        "min": 1,
+        "max": 20
+      },
+      "defaultValue": 2
+    },
+    {
+      "fieldId": "full-name",
+      "label": "Adınız soyadınız",
+      "type": "text",
+      "validation": {
+        "required": true,
+        "maxLength": 120
+      }
+    },
+    {
+      "fieldId": "email",
+      "label": "E-posta adresiniz",
+      "type": "email",
+      "validation": {
+        "required": true,
+        "maxLength": 200
+      }
+    }
+  ],
+  "layout": {
+    "columns": 2
+  },
+  "action": {
+    "adapterId": "demo-cms",
+    "actionId": "booking",
+    "kind": "submit",
+    "label": "Rezervasyon talebi oluştur"
+  }
+}

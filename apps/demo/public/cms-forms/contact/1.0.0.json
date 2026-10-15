@@ -1,0 +1,57 @@
+{
+  "ref": {
+    "id": "contact",
+    "version": "1.0.0"
+  },
+  "label": "İletişim",
+  "locale": "tr",
+  "layout": {
+    "columns": 2
+  },
+  "fields": [
+    {
+      "fieldId": "full-name",
+      "type": "text",
+      "label": "Adınız soyadınız",
+      "validation": {
+        "required": true,
+        "maxLength": 120
+      }
+    },
+    {
+      "fieldId": "email",
+      "type": "email",
+      "label": "E-posta adresiniz",
+      "validation": {
+        "required": true,
+        "maxLength": 200
+      }
+    },
+    {
+      "fieldId": "phone",
+      "type": "tel",
+      "label": "Telefonunuz",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "fieldId": "message",
+      "type": "textarea",
+      "label": "Mesajınız",
+      "validation": {
+        "required": true,
+        "maxLength": 3000
+      },
+      "layout": {
+        "span": 2
+      }
+    }
+  ],
+  "action": {
+    "adapterId": "demo-cms",
+    "actionId": "contact",
+    "kind": "submit",
+    "label": "Talep gönder"
+  }
+}

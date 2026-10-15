@@ -1,0 +1,36 @@
+{
+  "date": "2026-10-15T01:40:02.260Z",
+  "pages": 33,
+  "importedPages": 32,
+  "blockDefinitions": 48,
+  "activeRegions": 2,
+  "menuGroups": [
+    {
+      "groupId": "1",
+      "collectionId": "cms-menus",
+      "label": "Header ve hamburger menüsü · ID 1"
+    },
+    {
+      "groupId": "2",
+      "collectionId": "cms-menus",
+      "label": "Footer · Hizmetler · ID 2"
+    },
+    {
+      "groupId": "3",
+      "collectionId": "cms-menus",
+      "label": "Footer · Kurumsal · ID 3"
+    },
+    {
+      "groupId": "4",
+      "collectionId": "cms-menus",
+      "label": "Footer · Yasal bağlantılar · ID 4"
+    }
+  ],
+  "counts": {
+    "links": 1150,
+    "images": 138,
+    "forms": 8
+  },
+  "issues": [],
+  "warnings": []
+}

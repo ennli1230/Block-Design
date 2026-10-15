@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BlockDesign çoklu editör lifecycle kabulü</title>
+    <link rel="stylesheet" href="../../dist/esm/blockdesign-editor.css" />
+    <style>
+      html,
+      body {
+        margin: 0;
+        min-height: 100%;
+      }
+      .test-editors {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        height: 88vh;
+      }
+      .test-editors > div {
+        min-width: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="result" role="status" aria-live="polite">İki editör başlatılıyor…</p>
+    <div class="test-editors">
+      <div id="first"></div>
+      <div id="second"></div>
+    </div>
+    <script type="module">
+      try {
+        const { mountEditor } = await import(
+          "../../dist/esm/blockdesign-editor.js"
+        );
+        const first = mountEditor("#first", { language: "tr" });
+        const second = mountEditor("#second", { language: "tr" });
+        await Promise.all([first.ready, second.ready]);
+        const roots = Array.from(
+          document.querySelectorAll("[data-blockdesign-root]"),
+        );
+        const mobileControls = Array.from(
+          document.querySelectorAll(".bd-mobile-panel-button"),
+        );
+        const mobileControlIds = mobileControls.map((control) =>
+          control.getAttribute("aria-controls"),
+        );
+        const mobileControlsAreScoped =
+          roots.length === 2 &&
+          mobileControls.length === 4 &&
+          new Set(mobileControlIds).size === 4 &&
+          mobileControls.every(
+            (control) =>
+              document
+                .getElementById(control.getAttribute("aria-controls"))
+                ?.closest("[data-blockdesign-root]") ===
+              control.closest("[data-blockdesign-root]"),
+          );
+        const before = roots.length === 2 && mobileControlsAreScoped;
+        await first.destroy();
+        const firstRootAfterDestroy = document.querySelectorAll(
+          "#first [data-blockdesign-root]",
+        ).length;
+        const secondRootAfterFirstDestroy = document.querySelectorAll(
+          "#second [data-blockdesign-root]",
+        ).length;
+        const secondDocument = await second.getDocument();
+        const afterFirst =
+          firstRootAfterDestroy === 0 &&
+          secondRootAfterFirstDestroy === 1 &&
+          Boolean(secondDocument);
+        await second.destroy();
+        const afterSecond =
+          document.querySelectorAll("[data-blockdesign-root]").length === 0;
+        document.querySelector("#result").textContent =
+          before && afterFirst && afterSecond
+            ? "PASS · İki mount bağımsız başladı; mobil panel referansları benzersiz kaldı, destroy diğer editörü etkilemedi ve tüm root’lar temizlendi."
+            : `FAIL · before=${before}, afterFirst=${afterFirst} (first=${firstRootAfterDestroy}, second=${secondRootAfterFirstDestroy}, secondUsable=${Boolean(secondDocument)}), afterSecond=${afterSecond}`;
+      } catch (error) {
+        document.querySelector("#result").textContent =
+          `FAIL · ${error instanceof Error ? error.message : String(error)}`;
+      }
+    </script>
+  </body>
+</html>

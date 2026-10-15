@@ -1,0 +1,8 @@
+node_modules/
+.tools/
+dist/
+server/blockdesign.db
+server/blockdesign.db-shm
+server/blockdesign.db-wal
+.env
+*.log

@@ -1,0 +1,26 @@
+{
+  "name": "@blockdesign/demo",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "test": "node --experimental-strip-types --test src/scalanova-tour-content-provider.test.js src/workspace.test.js src/cms-forms.test.js",
+    "build": "vite build",
+    "typecheck": "vue-tsc --noEmit -p tsconfig.json",
+    "api": "cd ../../server && go run ./cmd/demo"
+  },
+  "dependencies": {
+    "@blockdesign/adapters": "0.1.0",
+    "@blockdesign/contracts": "0.1.0",
+    "@blockdesign/core": "0.1.0",
+    "@blockdesign/editor": "0.1.0",
+    "vue": "3.5.43"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "6.0.10",
+    "vite": "8.3.4",
+    "typescript": "6.0.3",
+    "vue-tsc": "3.0.10"
+  }
+}

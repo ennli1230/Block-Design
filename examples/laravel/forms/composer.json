@@ -1,0 +1,10 @@
+{
+  "name": "blockdesign/laravel-form-example",
+  "description": "Filament 5 to BlockDesign form schema bridge example",
+  "type": "project",
+  "require": { "php": "^8.2", "filament/forms": "^5.0" },
+  "require-dev": { "orchestra/testbench": "^10.0", "phpunit/phpunit": "^11.0" },
+  "autoload": { "psr-4": { "BlockDesign\\Forms\\": "src/" } },
+  "autoload-dev": { "psr-4": { "BlockDesign\\Forms\\Tests\\": "tests/" } },
+  "scripts": { "test": "phpunit" }
+}

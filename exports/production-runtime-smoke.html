@@ -1,0 +1,245 @@
+<!doctype html><html lang="tr"><meta charset="utf-8"><title>Üretim runtime kontrolü</title><style>body{font:18px system-ui;padding:32px;max-width:900px;margin:auto}button,input{font:inherit;padding:12px}h1{font-size:28px}</style><h1>Üretim derlemesi: CMS liste kontrolü</h1><p>Sabit dil: en · Şemaya göre sayısal filtre · Bağlam filtresi</p><section data-bd-collection='[{"binding":{"bindingId":"built-smoke","target":{"scope":"repeater","id":"items"},"mode":"query","providerId":"cms","collectionId":"posts","schemaVersion":"1","recordRefs":[],"groupRef":null,"fieldMappings":[{"from":"title","to":"title"}],"query":{"filters":[{"fieldId":"language","operator":"eq","value":{"$context":"contentLocale.locale"}}],"sort":null,"limit":1},"live":{"filters":[{"fieldId":"price","label":"Fiyat","operator":"gt"}],"syncUrl":false},"locale":{"mode":"fixed","locale":"en"}},"schema":{"repeaterId":"items","key":"items","label":"Items","minItems":0,"maxItems":10,"nesting":"none","mappingTarget":{"containerNodeId":"items","itemNodeId":"item","replaceChildren":true},"itemFields":[{"fieldId":"title","key":"title","type":"text","required":true,"mappingTarget":{"nodeId":"title","operation":"text"}}]},"templates":{"items":"<article data-bd-node=\"item\"><h2 data-bd-node=\"title\"></h2></article>"}}]'><div data-bd-node="items"></div></section><script>window.fetch=async(url,input)=>{if(new URL(url).searchParams.get('locale')!=='en')throw Error('URL locale');if(!input.body)return {ok:true,json:async()=>({schemaVersion:'1',fields:[{fieldId:'price',valueType:'number'}],capabilities:{query:{maxLimit:10,filterFields:[{fieldId:'language',operators:['eq']},{fieldId:'price',operators:['gt']}],sortFields:[]}}})};const q=JSON.parse(input.body);if(q.contentLocale.locale!=='en'||q.filters[0].value!=='en')throw Error('context locale');const price=q.filters.find(f=>f.fieldId==='price');if(price&&typeof price.value!=='number')throw Error('numeric filter');return {ok:true,json:async()=>({items:[{recordId:'one',collectionId:'posts',values:{title:price?'PRODUCTION PASS: numeric '+price.value:'PRODUCTION PASS: locale en'}}],nextCursor:null})};};</script><script>(()=>{const mount=function n(e, t, n) {
+	let r = e.ownerDocument, i = r.defaultView, a = t.schema.mappingTarget ? ((e, t) => [...e.querySelectorAll("[data-bd-node]")].find((e) => e.dataset.bdNode === t))(e, t.schema.mappingTarget.containerNodeId) : void 0;
+	if (!a) throw Error("Canlı liste kapsayıcısı bulunamadı.");
+	let o = a.innerHTML, s = a.getAttribute("aria-busy"), c = r.createElement("form"), l = r.createElement("p"), u = r.createElement("div");
+	c.className = "bd-collection-filters", u.className = "bd-collection-controls", l.setAttribute("role", "status"), l.setAttribute("aria-live", "polite");
+	let d = "bd." + t.binding.bindingId + ".", f = /* @__PURE__ */ new Map();
+	for (let e of t.binding.live?.filters ?? []) {
+		let t = r.createElement("label"), n = r.createElement("input"), i = r.createElement("span");
+		i.textContent = e.label, n.name = e.fieldId, n.type = "search", n.maxLength = 300, t.append(i, n), c.append(t), f.set(e.fieldId, n);
+	}
+	let p = (e) => {
+		let t = r.createElement("button");
+		return t.type = "button", t.textContent = e, t;
+	}, m = p("Filtrele"), h = p("Önceki"), g = p("Sonraki"), _ = p("Yeniden dene");
+	m.type = "submit", f.size && c.append(m), _.hidden = !0, u.append(h, g, _), a.before(c), a.after(l, u);
+	let v = !1, y = 0, b, x, S = null, C = [], w = n.syncUrl !== !1 && t.binding.live?.syncUrl !== !1;
+	function T() {
+		let e = new URL(i.location.href);
+		for (let [t, n] of f) n.value = e.searchParams.get(d + t) ?? "";
+		x = e.searchParams.get(d + "cursor") ?? void 0;
+		let t = i.history.state?.[d]?.previous;
+		C = Array.isArray(t) && t.every((e) => e === void 0 || typeof e == "string") ? t : [];
+	}
+	function E() {
+		if (!w) return;
+		let e = new URL(i.location.href);
+		for (let [t, n] of f) n.value.trim() ? e.searchParams.set(d + t, n.value.trim()) : e.searchParams.delete(d + t);
+		x ? e.searchParams.set(d + "cursor", x) : e.searchParams.delete(d + "cursor");
+		let t = i.history.state && typeof i.history.state == "object" ? i.history.state : {};
+		i.history.pushState({
+			...t,
+			[d]: { previous: [...C] }
+		}, "", e);
+	}
+	let D = (e, t) => t.split(".").reduce((e, t) => e && typeof e == "object" && Object.hasOwn(e, t) ? e[t] : void 0, e), O = (e) => {
+		if (/[\u0000-\u0020\u007f\\]/.test(e) || e.startsWith("//")) return !1;
+		try {
+			return [
+				"http:",
+				"https:",
+				"mailto:",
+				"tel:"
+			].includes(new URL(e, r.baseURI).protocol);
+		} catch {
+			return !1;
+		}
+	};
+	function k(e, n, i, a = 0, o = n.key) {
+		if (a >= 8) throw Error("Liste derinliği desteklenmiyor.");
+		let s = r.createElement("template");
+		s.innerHTML = t.templates[n.repeaterId] ?? "";
+		let c = s.content.firstElementChild;
+		if (!c) throw Error("Liste öğesi şablonu bulunamadı.");
+		let l = (e) => [c, ...c.querySelectorAll("[data-bd-node]")].filter((t) => t.dataset.bdNode === e);
+		c.dataset.bdItem = i;
+		let u = a ? o.split(".").slice(-a).join(".") : "";
+		for (let i of n.itemFields) {
+			let a = [
+				o ? o + "." + i.key : "",
+				u ? u + "." + i.key : "",
+				n.repeaterId + "." + i.key,
+				i.fieldId,
+				i.key
+			].filter(Boolean).map((e) => t.binding.fieldMappings.find((t) => t.to === e)).find(Boolean), s = a ? D(e, a.from) : e[i.key] ?? i.defaultValue;
+			if (typeof s == "object" && s) throw Error("Liste alanı metin veya sayı olmalı.");
+			if (i.required && (s == null || s === "")) throw Error("Gerekli liste alanı eksik: " + i.label);
+			if (s != null && s !== "") {
+				if (i.type === "number" && (typeof s != "number" || !Number.isFinite(s))) throw Error("Liste sayısal alanı geçersiz: " + i.label);
+				if (i.type === "boolean" && typeof s != "boolean") throw Error("Liste mantıksal alanı geçersiz: " + i.label);
+				if (!["number", "boolean"].includes(i.type) && typeof s != "string") throw Error("Liste metin alanı geçersiz: " + i.label);
+				let e = typeof s == "number" ? s : String(s).length;
+				if (i.min !== void 0 && e < i.min || i.max !== void 0 && e > i.max) throw Error("Liste alanı sınırları geçersiz: " + i.label);
+				if ([
+					"url",
+					"image",
+					"video"
+				].includes(i.type) && !O(String(s))) throw Error("Liste bağlantısı geçersiz.");
+			}
+			for (let e of l(i.mappingTarget.nodeId)) {
+				let t = String(s ?? ""), n = i.mappingTarget.operation, a = i.mappingTarget.property ?? "";
+				if (n === "attribute") {
+					if (!/^(href|src|alt|title|target|rel|aria-label|width|height)$/.test(a)) throw Error("Canlı listede desteklenmeyen nitelik: " + a);
+					if ((a === "href" || a === "src") && t && !O(t)) throw Error("Liste bağlantısı geçersiz.");
+					e.setAttribute(a, t), a === "target" && t === "_blank" && e.setAttribute("rel", "noopener noreferrer");
+				} else if (n === "booleanVisibility") e.hidden = s === !0;
+				else if (n === "safeRichText") {
+					let n = r.createElement("template");
+					n.innerHTML = t;
+					let i = (e) => {
+						if (e.nodeType === 3) return r.createTextNode(e.textContent ?? "");
+						let t = e.tagName?.toLowerCase(), n = t && [
+							"p",
+							"br",
+							"strong",
+							"em",
+							"b",
+							"i",
+							"u",
+							"a",
+							"ul",
+							"ol",
+							"li",
+							"blockquote"
+						].includes(t) ? r.createElement(t) : r.createDocumentFragment();
+						if (t === "a" && n.nodeType === 1) {
+							let t = e.getAttribute("href");
+							t && O(t) && n.setAttribute("href", t);
+						}
+						for (let t of e.childNodes) n.appendChild(i(t));
+						return n;
+					};
+					e.replaceChildren(...[...n.content.childNodes].map(i));
+				} else if (n === "text") e.textContent = t;
+				else if (n === "textSegment" && /^\d+$/.test(a)) {
+					let n = e.childNodes[Number(a)];
+					if (n?.nodeType !== 3) throw Error("Liste metin parçası bulunamadı.");
+					n.textContent = t;
+				} else throw Error("Canlı listede bu alan eşlemesi desteklenmiyor: " + n);
+			}
+		}
+		for (let r of n.childRepeaters ?? []) {
+			let n = r.mappingTarget ? l(r.mappingTarget.containerNodeId)[0] : void 0;
+			if (!n) throw Error("Alt liste kapsayıcısı bulunamadı.");
+			let s = t.binding.fieldMappings.find((e) => e.to === (o ? o + "." + r.key : r.key)) ?? t.binding.fieldMappings.find((e) => e.to === (u ? u + "." + r.key : r.key)) ?? t.binding.fieldMappings.find((e) => e.to === r.key), c = D(e, s?.from ?? r.key) ?? [];
+			if (!Array.isArray(c) || c.length > r.maxItems) throw Error("Alt liste sınırı geçersiz.");
+			n.replaceChildren(...c.map((e, t) => {
+				if (!e || typeof e != "object" || Array.isArray(e)) throw Error("Alt liste kaydı geçersiz.");
+				return k(e, r, i + "-" + t, a + 1, o ? o + "." + r.key : r.key);
+			}));
+		}
+		let d = /* @__PURE__ */ new Map();
+		for (let e of [c, ...c.querySelectorAll("[id]")]) if (e.id) {
+			let n = e.id;
+			e.id = "bd-row-" + encodeURIComponent(t.binding.bindingId) + "-" + encodeURIComponent(i) + "-" + n, d.set(n, e.id);
+		}
+		for (let e of [c, ...c.querySelectorAll("*")]) for (let t of [
+			"for",
+			"aria-controls",
+			"aria-labelledby",
+			"aria-describedby",
+			"href"
+		]) {
+			let n = e.getAttribute(t);
+			n && e.setAttribute(t, t === "href" && n.startsWith("#") ? "#" + (d.get(n.slice(1)) ?? n.slice(1)) : n.split(" ").map((e) => d.get(e) ?? e).join(" "));
+		}
+		return c;
+	}
+	function A(e) {
+		a.setAttribute("aria-busy", String(e)), m.disabled = e, h.disabled = e || !C.length && !x, h.textContent = x && !C.length ? "İlk sayfa" : "Önceki", g.disabled = e || !S, _.disabled = e;
+	}
+	async function j() {
+		let e = ++y;
+		b?.abort(), b = new AbortController(), A(!0), l.textContent = "Yükleniyor…", _.hidden = !0;
+		try {
+			let r = Object.fromEntries([...f].map(([e, t]) => [e, t.value])), i = await n.load(r, x, b.signal);
+			if (v || y !== e) return;
+			if (!Array.isArray(i.items) || i.items.length > (t.binding.query?.limit ?? 0) || i.nextCursor !== null && typeof i.nextCursor != "string" || x && i.nextCursor === x) throw Error("CMS sayfalama yanıtı geçersiz.");
+			let o = /* @__PURE__ */ new Set(), s = i.items.map((e) => {
+				if (!e || typeof e.recordId != "string" || o.has(e.recordId) || !e.values || typeof e.values != "object") throw Error("CMS liste kaydı geçersiz.");
+				return o.add(e.recordId), k(e.values, t.schema, e.recordId);
+			});
+			a.replaceChildren(...s), S = i.nextCursor, l.textContent = s.length ? `${s.length} kayıt gösteriliyor.` : "Sonuç bulunamadı.";
+		} catch (t) {
+			if (v || y !== e) return;
+			l.textContent = t instanceof Error ? t.message : "Liste yüklenemedi.", _.hidden = !1, S = null;
+		} finally {
+			!v && y === e && A(!1);
+		}
+	}
+	let M = (e) => {
+		e.preventDefault(), x = void 0, C = [], E(), j();
+	}, N = () => {
+		S && (C.push(x), x = S, E(), j());
+	}, P = () => {
+		(C.length || x) && (x = C.pop(), E(), j());
+	}, F = () => {
+		j();
+	}, I = () => {
+		T(), j();
+	};
+	return w && (T(), i.addEventListener("popstate", I)), c.addEventListener("submit", M), g.addEventListener("click", N), h.addEventListener("click", P), _.addEventListener("click", F), j(), () => {
+		v = !0, ++y, b?.abort(), i.removeEventListener("popstate", I), c.removeEventListener("submit", M), g.removeEventListener("click", N), h.removeEventListener("click", P), _.removeEventListener("click", F), c.remove(), l.remove(), u.remove(), a.innerHTML = o, s === null ? a.removeAttribute("aria-busy") : a.setAttribute("aria-busy", s);
+	};
+};const contextualQuery=function e(e, t) {
+	return {
+		...structuredClone(e),
+		filters: e.filters.map((e) => {
+			let n = e.value;
+			if (!n || Array.isArray(n) || typeof n != "object" || !Object.hasOwn(n, "$context")) return structuredClone(e);
+			let r = n.$context;
+			if (typeof r != "string" || !/^(page\.(documentId|siteId|recordId|route\.[\w-]+)|contentLocale\.locale)$/.test(r)) throw Error("Geçersiz sayfa bağlamı alanı.");
+			let i = t;
+			for (let e of r.split(".")) i = i && typeof i == "object" && Object.hasOwn(i, e) ? i[e] : void 0;
+			if (![
+				"string",
+				"number",
+				"boolean"
+			].includes(typeof i)) throw Error(`Sayfa bağlamı bulunamadı: ${r}`);
+			return {
+				...e,
+				value: i
+			};
+		})
+	};
+};const loadCollectionPage=async function t(t, n, r, i, a, o = e) {
+	if (n.mode !== "query" || n.target.scope !== "repeater" || !n.query || !n.live || !n.collectionId) throw Error("Canlı liste için sorguya bağlı bir liste seç.");
+	n.locale?.mode === "fixed" && (a = {
+		...a,
+		contentLocale: {
+			locale: n.locale.locale,
+			fallback: a?.contentLocale?.fallback ?? { mode: "none" }
+		}
+	});
+	let s = t.find((e) => e.providerId === n.providerId);
+	if (!s?.queryPage || !s.capabilities.supported.includes("queryPage")) throw Error("CMS sağlayıcısı sayfalı sorguyu desteklemiyor.");
+	let c = await s.getSchema(n.collectionId, a);
+	if (c.localization?.mode === "translated" && c.localization.supportedLocales?.length && a?.contentLocale) {
+		let e = (e) => c.localization.supportedLocales.some((t) => t.toLowerCase() === e.toLowerCase() || t.toLowerCase() === e.toLowerCase().split("-")[0]);
+		if (!e(a.contentLocale.locale) && !(a.contentLocale.fallback.mode === "locale" && e(a.contentLocale.fallback.locale))) throw Error("Canlı liste istenen dili desteklemiyor.");
+	}
+	if (n.schemaVersion && c.schemaVersion && n.schemaVersion !== c.schemaVersion) throw Error("CMS şeması değişti; liste alanlarını yeniden eşle.");
+	let l = c.capabilities.query, u = o(n.query, a);
+	if (!l || !Number.isInteger(u.limit) || !u.limit || u.limit < 1 || u.limit > l.maxLimit) throw Error("Liste sayfa boyutu desteklenmiyor.");
+	for (let e of Object.keys(r)) if (!n.live.filters.some((t) => t.fieldId === e)) throw Error(`Ziyaretçi filtresine izin verilmiyor: ${e}`);
+	for (let e of n.live.filters) {
+		if (!l.filterFields.some((t) => t.fieldId === e.fieldId && t.operators.includes(e.operator))) throw Error(`CMS bu filtreyi desteklemiyor: ${e.fieldId}`);
+		let t = r[e.fieldId]?.trim();
+		if (t) {
+			if (t.length > 300) throw Error("Ziyaretçi filtresi çok uzun.");
+			let n = c.fields?.find((t) => t.fieldId === e.fieldId)?.valueType === "number" ? Number(t) : t;
+			if (typeof n == "number" && !Number.isFinite(n)) throw Error("Sayısal filtre geçersiz.");
+			u.filters.push({
+				fieldId: e.fieldId,
+				operator: e.operator,
+				value: n
+			});
+		}
+	}
+	for (let e of u.filters) if (!l.filterFields.some((t) => t.fieldId === e.fieldId && t.operators.includes(e.operator))) throw Error("Sorgu filtresi desteklenmiyor.");
+	if (u.sort && !l.sortFields.includes(u.sort.fieldId)) throw Error("Sorgu sıralaması desteklenmiyor.");
+	let d = await s.queryPage(n.collectionId, u, i, a);
+	if (!Array.isArray(d.items) || d.items.length > u.limit || d.nextCursor !== null && typeof d.nextCursor != "string") throw Error("CMS sayfalama yanıtı geçersiz.");
+	if (i && d.nextCursor === i) throw Error("CMS aynı sayfalama anahtarını tekrar döndürdü.");
+	return d;
+};const publication={"baseUrl":"/public","context":{"contentLocale":{"locale":"tr","fallback":{"mode":"none"}}}};const states=new WeakMap();const init=(root=document)=>{for(const el of [...(root.matches?.('[data-bd-collection]')?[root]:[]),...root.querySelectorAll('[data-bd-collection]')]){states.get(el)?.();const configs=JSON.parse(el.getAttribute('data-bd-collection'));const stops=configs.map(config=>mount(el,config,{load:async(values,cursor,signal)=>{if(!publication)throw new Error('CMS liste yayın bağlantısı yapılandırılmadı.');const base=new URL(publication.baseUrl,document.baseURI);if(!['http:','https:'].includes(base.protocol))throw new Error('CMS liste yayın adresi geçersiz.');const endpoint=(context)=>{const url=new URL(base.href.replace(/\/$/,'')+'/content/collections/'+encodeURIComponent(config.binding.collectionId));url.searchParams.set('providerId',config.binding.providerId);if(context?.contentLocale){url.searchParams.set('locale',context.contentLocale.locale);if(context.contentLocale.fallback.mode==='locale')url.searchParams.set('fallbackLocale',context.contentLocale.fallback.locale);}return url;};const read=async(url,input)=>{const response=await fetch(url,input);if(!response.ok)throw new Error('Liste yüklenemedi ('+response.status+'). Yeniden dene.');return response.json();};const provider={providerId:config.binding.providerId,capabilities:{supported:['queryPage']},getSchema:(_id,context)=>read(endpoint(context),{signal}),queryPage:(_id,query,cursor,context)=>{const url=endpoint(context);url.pathname+='/query';return read(url,{method:'POST',headers:{'Content-Type':'application/json'},signal,body:JSON.stringify({...query,cursor,providerId:config.binding.providerId,schemaVersion:config.binding.schemaVersion,page:context?.page,contentLocale:context?.contentLocale})});}};return loadCollectionPage([provider],config.binding,values,cursor,publication.context,contextualQuery);}}));states.set(el,()=>stops.forEach(stop=>stop()));}};const destroy=(root=document)=>{for(const el of [...(root.matches?.('[data-bd-collection]')?[root]:[]),...root.querySelectorAll('[data-bd-collection]')]){states.get(el)?.();states.delete(el);}};window.BlockDesignCollections={init,destroy};init();})();</script>

@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Canlı listeler ve etkileşimli bileşenler</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: #f5f7f4;
+        color: #27362e;
+        font:
+          16px/1.6 system-ui,
+          sans-serif;
+      }
+      main {
+        max-width: 1060px;
+        margin: auto;
+        padding: 40px 24px;
+      }
+      h1 {
+        font-size: clamp(28px, 4vw, 42px);
+        line-height: 1.15;
+        letter-spacing: -0.025em;
+        max-width: 24ch;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.3;
+      }
+      p {
+        max-width: 68ch;
+      }
+      section.example {
+        padding-block: 28px;
+        border-block-start: 1px solid #89988d;
+      }
+      button,
+      input {
+        font: inherit;
+      }
+      button {
+        cursor: pointer;
+        border: 1px solid #718176;
+        border-radius: 4px;
+        background: white;
+        color: #27362e;
+        padding: 10px 16px;
+        min-height: 44px;
+      }
+      button:hover {
+        background: #e7eee8;
+      }
+      button:disabled {
+        cursor: default;
+      }
+      a {
+        color: #245743;
+        text-underline-offset: 3px;
+      }
+      :focus-visible {
+        outline: 2px solid #245743;
+        outline-offset: 4px;
+      }
+      #listing article {
+        padding: 24px;
+        background: white;
+        border: 1px solid #bdcbbf;
+      }
+      #listing h3 {
+        margin-block-start: 0;
+      }
+      #listing [role="status"] {
+        min-height: 1.6em;
+      }
+      #widgets {
+        display: grid;
+        gap: 24px;
+      }
+      .bd-interactive-widget {
+        background: white;
+        border: 1px solid #bdcbbf;
+      }
+      @media (max-width: 600px) {
+        main {
+          padding: 24px 16px;
+        }
+        .bd-collection-filters {
+          display: grid !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <a href="/">Editöre dön</a>
+      <h1>Canlı listeler ve etkileşimli bileşenler</h1>
+      <p>
+        CMS’den bağımsız örnek sağlayıcıyla sayfalama ve filtreleme. Aynı
+        bağlantı sözleşmesi CMS’nin veritabanından veri döndüren adapter’ında
+        kullanılabilir.
+      </p>
+      <section class="example">
+        <h2>Canlı içerik listesi</h2>
+        <p>
+          Kategori filtresine “Kruvaziyer”, “Kültür & tarih” veya “Rota
+          fikirleri” yazabilirsin. Filtreyi temizlemek tüm kayıtları getirir.
+          Her sayfada bir kayıt gösterilir.
+        </p>
+        <div id="listing"></div>
+      </section>
+      <section class="example">
+        <h2>Etkileşimli bileşenler</h2>
+        <p>
+          Sekmelerde ok tuşlarıyla ilerleyebilir, modal ve galeriyi Escape ile
+          kapatabilirsin. Galeride görsel bağlantısına tıkla.
+        </p>
+        <div id="widgets"></div>
+      </section>
+      <p><a href="/interactive-acceptance.html">Kabul testlerini aç</a></p>
+    </main>
+    <script type="module" src="/src/interactive-examples.ts"></script>
+  </body>
+</html>
